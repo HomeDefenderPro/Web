@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Home Defender Pro Certificate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #f7f7f7; font-family: 'Inter', sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .certificate-wrapper { 
+            width: 100%; 
+            max-width: 900px; 
+            min-height: 600px; 
+            border: 20px solid #3f51b5; 
+            padding: 40px; 
+            background: #fff; 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
+            text-align: center; 
+            position: relative; 
+            margin-bottom: 20px;
+        }
+        .header { color: #1e272e; font-family: 'Roboto Slab', serif; font-size: 2.5em; margin-bottom: 5px; }
+        .subheader { color: #3f51b5; font-size: 1.5em; margin-bottom: 30px; font-weight: 700; }
+        .text-line { font-size: 1.2em; margin: 10px 0; }
+        .achieved-text { font-size: 1.8em; margin-top: 40px; font-weight: 400; }
+        .name-display { 
+            font-size: 3.5em; 
+            color: #cc0000; /* Use a bold, standout color */
+            font-family: 'Roboto Slab', serif; 
+            margin: 15px 0; 
+            border-bottom: 3px double #aaa; 
+            padding-bottom: 10px;
+        }
+        .certification-title { font-size: 2.2em; color: #3f51b5; font-weight: 700; margin-top: 10px; }
+        .date-section { margin-top: 50px; font-size: 1em; display: flex; justify-content: space-around; }
+        .date-item { width: 45%; border-top: 2px solid #1e272e; padding-top: 10px; }
+        .print-button { padding: 15px 30px; background-color: #1e272e; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.2em; }
+        .print-button:hover { background-color: #444; }
+    </style>
+</head>
+<body>
+    <div class="certificate-wrapper">
+        <div class="header">HOME DEFENDER PRO</div>
+        <div class="subheader">Official Certification of Achievement</div>
+
+        <div class="text-line">This certifies that</div>
+        <div class="name-display" id="certified-name"></div>
+        <div class="text-line">has successfully completed the required training and passed the final examination to earn the title of</div>
+        
+        <div class="certification-title" id="certified-title"></div>
+
+        <div class="date-section">
+            <div class="date-item">
+                <span id="issue-date"></span><br>
+                Certification Date
+            </div>
+            <div class="date-item">
+                <span id="expiry-date"></span><br>
+                Valid Until
+            </div>
+        </div>
+    </div>
+
+    <button class="print-button" onclick="window.print()">Print Your Certificate</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const userName = params.get('name');
+            const certTitle = params.get('title');
+
+            if (userName) {
+                document.getElementById('certified-name').textContent = decodeURIComponent(userName);
+            } else {
+                document.getElementById('certified-name').textContent = "Certified User";
+            }
+            
+            if (certTitle) {
+                document.getElementById('certified-title').textContent = decodeURIComponent(certTitle) + " Certification";
+            } else {
+                document.getElementById('certified-title').textContent = "Specialist Certification";
+            }
+
+            // --- Date Calculation Logic ---
+            const today = new Date();
+            const issueDate = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            // Calculate Expiration: Current Date + 364 Days
+            const expiry = new Date();
+            expiry.setDate(today.getDate() + 364);
+            const expiryDate = expiry.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            document.getElementById('issue-date').textContent = issueDate;
+            document.getElementById('expiry-date').textContent = expiryDate;
+        });
+    </script>
+</body>
+</html>
