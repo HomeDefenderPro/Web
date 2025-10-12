@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillar 3 Certification Quiz</title>
+    <style>
+        /* Include the full styles from your quiz template */
+        body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
+        .container { max-width: 700px; margin: 40px auto; padding: 25px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .question { margin-bottom: 20px; padding: 15px; border: 1px solid #e0e0e0; border-radius: 5px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; }
+        input[type="radio"] { margin-right: 10px; }
+        #results, #name-input-section { margin-top: 30px; padding: 20px; background-color: #f0f4ff; border-radius: 5px; }
+        button { padding: 10px 20px; background-color: #3f51b5; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; font-size: 1.1em; }
+        button:hover { background-color: #303f9f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pillar 3: Final Certification Quiz</h1>
+        <p>Answer the 10 questions below. You need at least 7 correct answers to earn your certificate.</p>
+        
+        <div id="quiz-form">
+            <div id="name-input-section">
+                <label for="user-name">Enter your full name for the certificate:</label>
+                <input type="text" id="user-name" placeholder="John Doe" required style="width: 80%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+
+            <div class="question">
+                <p>1. In the awareness color codes, what state should be your default at home?</p>
+                <label><input type="radio" name="q1" value="A"> A. White (Tuned-Out).</label>
+                <label><input type="radio" name="q1" value="B"> B. Yellow (Relaxed Awareness).</label>
+                <label><input type="radio" name="q1" value="C"> C. Red (Immediate Action).</label>
+            </div>
+            <div class="question">
+                <p>2. The 'contact cycle' used by intruders begins with which phase?</p>
+                <label><input type="radio" name="q2" value="A"> A. Execution (The Breach).</label>
+                <label><input type="radio" name="q2" value="B"> B. Observation (Surveillance).</label>
+                <label><input type="radio" name="q2" value="C"> C. Testing (Faking a delivery).</label>
+            </div>
+            <div class="question">
+                <p>3. What is the goal of a "what-if" mental rehearsal?</p>
+                <label><input type="radio" name="q3" value="A"> A. To guarantee a perfect outcome.</label>
+                <label><input type="radio" name="q3" value="B"> B. To memorize police codes.</label>
+                <label><input type="radio" name="q3" value="C"> C. To speed up the decision-making process under stress.</label>
+            </div>
+            <div class="question">
+                <p>4. Which of the following is a key pre-incident indicator (PIN)?</p>
+                <label><input type="radio" name="q4" value="A"> A. A neighbor trimming their lawn.</label>
+                <label><input type="radio" name="q4" value="B"> B. Unfamiliar vehicle driving slowly past the house multiple times.</label>
+                <label><input type="radio" name="q4" value="C"> C. A distant ambulance siren.</label>
+            </div>
+            <div class="question">
+                <p>5. If you perceive a potential threat is observing you, the best non-verbal action is:</p>
+                <label><input type="radio" name="q5" value="A"> A. Immediately hiding or running away.</label>
+                <label><input type="radio" name="q5" value="B"> B. Making direct eye contact to acknowledge their presence.</label>
+                <label><input type="radio" name="q5" value="C"> C. Pretending to be on your phone.</label>
+            </div>
+            <div class="question">
+                <p>6. "Condition Orange" in awareness indicates what?</p>
+                <label><input type="radio" name="q6" value="A"> A. Relaxed and comfortable.</label>
+                <label><input type="radio" name="q6" value="B"> B. A specific alert based on a known threat.</label>
+                <label><input type="radio" name="q6" value="C"> C. A state of general apathy.</label>
+            </div>
+            <div class="question">
+                <p>7. Why is cataloging "anomalies" (unusual events) a useful exercise?</p>
+                <label><input type="radio" name="q7" value="A"> A. To keep a daily journal.</label>
+                <label><input type="radio" name="q7" value="B"> B. To track package deliveries.</label>
+                <label><input type="radio" name="q7" value="C"> C. To establish a baseline of "normal" behavior for your area.</label>
+            </div>
+            <div class="question">
+                <p>8. What is the final phase of the intruder's 'contact cycle'?</p>
+                <label><input type="radio" name="q8" value="A"> A. Testing.</label>
+                <label><input type="radio" name="q8" value="B"> B. Execution.</label>
+                <label><input type="radio" name="q8" value="C"> C. Relocation.</label>
+            </div>
+            <div class="question">
+                <p>9. A non-confrontational way to deter an unwanted solicitor is:</p>
+                <label><input type="radio" name="q9" value="A"> A. Politely stating, "I am not interested, please leave my property."</label>
+                <label><input type="radio" name="q9" value="B"> B. Slamming the door without a word.</label>
+                <label><input type="radio" name="q9" value="C"> C. Offering them a glass of water.</label>
+            </div>
+            <div class="question">
+                <p>10. What does the term "situational awareness" primarily involve?</p>
+                <label><input type="radio" name="q10" value="A"> A. Being constantly afraid.</label>
+                <label><input type="radio" name="q10" value="B"> B. Knowing who your neighbors are.</label>
+                <label><input type="radio" name="q10" value="C"> C. Perceiving and comprehending your environment to project future events.</label>
+            </div>
+            
+            <button onclick="submitQuiz()">Submit Quiz for Certification</button>
+        </div>
+
+        <div id="results" style="display:none;">
+            <h2>Results:</h2>
+            <p id="score-message"></p>
+        </div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            q1: 'B', q2: 'B', q3: 'C', q4: 'B', q5: 'B', 
+            q6: 'B', q7: 'C', q8: 'B', q9: 'A', q10: 'C' 
+        };
+        const minimumScore = 7;
+
+        function submitQuiz() {
+            const userName = document.getElementById('user-name').value.trim();
+            if (!userName) {
+                alert("Please enter your name to receive your certificate!");
+                return;
+            }
+
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const qName = 'q' + i;
+                const selected = document.querySelector(`input[name="${qName}"]:checked`);
+                
+                if (!selected) {
+                    alert("Please answer all questions before submitting.");
+                    return;
+                }
+
+                if (selected.value === correctAnswers[qName]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('quiz-form').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+
+            if (score >= minimumScore) {
+                const message = `Congratulations, ${userName}! You scored ${score}/${totalQuestions}. You have passed the certification!`;
+                document.getElementById('score-message').innerHTML = message;
+
+                // **UPDATED CERTIFICATE TITLE FOR PILLAR 3**
+                const encodedName = encodeURIComponent(userName);
+                const certificationTitle = encodeURIComponent("Situational Awareness Specialist");
+                
+                window.location.href = `certificate_generator.html?name=${encodedName}&title=${certificationTitle}`;
+            } else {
+                const message = `I'm sorry, ${userName}. You scored ${score}/${totalQuestions}. You need ${minimumScore} to pass. Please review the course material and try again.`;
+                document.getElementById('score-message').innerHTML = `<span style="color: ${score >= minimumScore ? 'green' : 'red'};">${message}</span>`;
+            }
+        }
+    </script>
+</body>
+</html>
