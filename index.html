@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Defender Pro | Proactive, Non-Lethal Home Security Training</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* GLOBAL STYLES & RESET */
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8; /* Off-white background */
-            color: #333;
+            background-color: #f7f7f7; /* Soft gray background */
+            color: #444; /* Dark gray body text for readability */
             line-height: 1.6;
         }
         .container {
@@ -21,37 +21,40 @@
             padding: 0 25px;
         }
         h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto Slab', serif; /* Serif font for serious headings */
             font-weight: 700;
             color: #222;
         }
         a {
             text-decoration: none;
             color: #222;
+            transition: color 0.3s;
         }
 
-        /* ACCENT COLOR - Dark Gold/Orange for CTAs and highlights */
+        /* NEW SOPHISTICATED COLOR PALETTE */
         :root {
-            --accent-color: #b8860b; /* Dark Gold */
-            --accent-hover: #a1760a;
-            --danger-color: #dc3545;
+            --primary-dark: #1e272e; /* Deep Charcoal/Slate */
+            --accent-color: #3f51b5; /* Rich Slate Blue/Indigo for professional authority */
+            --accent-hover: #303f9f;
+            --light-bg: #fff;
+            --danger-color: #cc0000; /* Deeper red for alerts */
         }
 
         /* TOP ALERT BAR (Fear Marketing) */
         .alert-bar {
             background-color: var(--danger-color);
-            color: #fff;
+            color: var(--light-bg);
             padding: 10px 0;
             text-align: center;
             font-size: 1.05em;
             font-weight: 600;
         }
 
-        /* HEADER & NAVIGATION (Minimalist) */
+        /* HEADER & NAVIGATION */
         header {
-            background-color: #fff;
+            background-color: var(--light-bg);
             padding: 20px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #ddd;
         }
         .header-content {
             display: flex;
@@ -61,12 +64,13 @@
         .logo {
             font-size: 1.8em;
             font-weight: 700;
-            color: #222;
+            color: var(--primary-dark);
+            font-family: 'Roboto Slab', serif; /* Use heading font for logo */
         }
         nav a {
             margin-left: 30px;
             font-weight: 600;
-            transition: color 0.3s;
+            color: #444;
         }
         nav a:hover {
             color: var(--accent-color);
@@ -74,16 +78,16 @@
 
         /* HERO SECTION */
         .hero {
-            background-color: #333; /* Dark background for hero */
-            color: #fff;
+            background-color: var(--primary-dark); /* Deep, serious background */
+            color: var(--light-bg);
             padding: 100px 0;
             text-align: center;
             position: relative;
             overflow: hidden; 
         }
-        /* STAR RATING BLOCK (FIXED ALIGNMENT) */
+        /* STAR RATING BLOCK */
         .rating-block {
-            background-color: #000; /* Black background as requested */
+            background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent black */
             padding: 10px 20px;
             display: inline-block;
             margin-bottom: 25px;
@@ -93,13 +97,13 @@
             font-size: 1.8em;
             color: gold;
             margin: 0;
-            line-height: 1; /* Ensure perfect vertical alignment */
+            line-height: 1; 
             display: inline-block;
             vertical-align: middle;
         }
         .rating-block span {
-            color: #fff; /* White text for contrast */
-            font-size: 0.8em; /* Slightly larger text */
+            color: var(--light-bg);
+            font-size: 0.8em; 
             font-weight: 600;
             margin-left: 10px;
             vertical-align: middle;
@@ -107,51 +111,49 @@
         }
         
         .hero h2 {
-            color: #fff;
+            color: var(--light-bg);
             font-size: 3em;
             margin-bottom: 20px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
         }
         .hero p {
             font-size: 1.4em;
             max-width: 800px;
             margin: 0 auto 40px;
             font-weight: 400;
+            color: #ccc;
         }
         .cta-button {
             display: inline-block;
             padding: 15px 35px;
-            background-color: var(--accent-color);
-            color: #fff;
-            text-decoration: none;
+            background-color: var(--accent-color); /* Use professional blue */
+            color: var(--light-bg);
             font-size: 1.25em;
             font-weight: 700;
             border-radius: 5px;
-            transition: background-color 0.3s, transform 0.2s;
             letter-spacing: 0.5px;
             margin-top: 15px; 
+            border: 2px solid var(--accent-color);
         }
         .cta-button:hover {
             background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
             transform: translateY(-2px);
         }
         .certification-tag {
             display: block;
             font-size: 1.7em;
             font-weight: 700;
-            color: #fff;
+            color: var(--accent-color); /* Highlight certification with accent color */
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin-bottom: 10px;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
         }
 
 
         /* MASCOT SECTION */
         .mascot-intro {
-            background-color: #e0e0e0; 
+            background-color: #ebebeb; /* Cleaner separation */
             padding: 50px 0;
             text-align: center;
             border-bottom: 1px solid #ddd;
@@ -166,7 +168,6 @@
         .mascot-image-placeholder {
             width: 200px; 
             height: 200px;
-            /* Placeholder styles removed for image */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -177,27 +178,31 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
+            border: 5px solid var(--light-bg); /* Clean border around the image */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         .mascot-text h3 {
             font-size: 2em;
-            color: #222;
+            color: var(--primary-dark);
             margin-bottom: 10px;
         }
         .mascot-text p {
             max-width: 600px;
             text-align: left;
             margin: 0 auto; 
+            color: #555;
         }
 
         /* VALUE PROPOSITION SECTION */
         .value-prop {
-            background-color: #f8f8f8;
+            background-color: #f7f7f7;
             padding: 60px 0;
             text-align: center;
         }
         .value-prop h2 {
             font-size: 2.5em;
             margin-bottom: 40px;
+            color: var(--primary-dark);
         }
         .value-points {
             display: grid;
@@ -206,36 +211,38 @@
             text-align: left;
         }
         .value-point-card {
-            background-color: #fff;
+            background-color: var(--light-bg);
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--accent-color);
+            border-left: 5px solid var(--accent-color); /* Accent stripe */
             transition: transform 0.3s;
         }
         .value-point-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         .value-point-card h3 {
             font-size: 1.3em;
-            color: #222;
+            color: var(--primary-dark);
             margin-bottom: 10px;
         }
         .value-point-card p {
             font-size: 0.95em;
-            color: #555;
+            color: #666;
         }
 
         /* COURSE MODULES SECTION */
         .modules {
             padding: 80px 0;
-            background-color: #fff;
+            background-color: var(--light-bg);
             text-align: center;
             border-top: 1px solid #eee;
         }
         .modules h2 {
             font-size: 2.5em;
             margin-bottom: 50px;
+            color: var(--primary-dark);
         }
         .course-grid {
             display: grid;
@@ -243,7 +250,7 @@
             gap: 30px;
         }
         .course-card {
-            background-color: #f8f8f8;
+            background-color: #f7f7f7;
             border-radius: 8px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             text-align: left;
@@ -257,11 +264,11 @@
         .course-card-image-placeholder {
             width: 100%;
             height: 180px; 
-            background-color: #ccc;
+            background-color: #dcdcdc; /* Lighter gray for course image placeholders */
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
+            color: #888;
             font-style: italic;
             font-size: 0.9em;
             border-bottom: 1px solid #bbb;
@@ -270,7 +277,7 @@
             padding: 25px;
         }
         .course-card-content h3 {
-            color: #222;
+            color: var(--primary-dark);
             margin-top: 0;
             font-size: 1.5em;
             margin-bottom: 10px;
@@ -278,14 +285,14 @@
         .course-card-content p {
             font-size: 0.95em;
             line-height: 1.6;
-            color: #555;
+            color: #666;
             margin-bottom: 25px;
         }
         .buy-link {
             display: inline-block;
             padding: 10px 20px;
             background-color: var(--accent-color);
-            color: #fff;
+            color: var(--light-bg);
             font-weight: 600;
             border-radius: 4px;
             transition: background-color 0.3s;
@@ -297,14 +304,14 @@
 
         /* CONTACT FORM SECTION */
         .contact-form {
-            background-color: #222; 
-            color: #fff;
+            background-color: var(--primary-dark); /* Deep background for contrast */
+            color: var(--light-bg);
             padding: 80px 20px;
             text-align: center;
             border-top: 1px solid #444;
         }
         .contact-form h2 {
-            color: #fff;
+            color: var(--light-bg);
             margin-bottom: 15px;
             font-size: 2.5em;
         }
@@ -328,8 +335,8 @@
             width: 100%;
             padding: 15px;
             border: 1px solid #555;
-            background-color: #333;
-            color: #fff;
+            background-color: #3f4a56; /* Slightly lighter input background */
+            color: var(--light-bg);
             border-radius: 4px;
             box-sizing: border-box; 
             font-size: 1em;
@@ -343,7 +350,7 @@
         }
         .contact-form button {
             background-color: var(--accent-color);
-            color: #fff;
+            color: var(--light-bg);
             padding: 18px 25px;
             border: none;
             border-radius: 4px;
@@ -360,7 +367,7 @@
 
         /* FOOTER */
         footer {
-            background-color: #1a1a1a;
+            background-color: #111; /* Nearly black footer */
             color: #bbb;
             text-align: center;
             padding: 30px 0;
@@ -369,7 +376,6 @@
         footer a {
             color: #bbb;
             margin: 0 10px;
-            transition: color 0.3s;
         }
         footer a:hover {
             color: var(--accent-color);
@@ -454,18 +460,8 @@
             <div class="container">
                 <div class="mascot-content">
                     
-                    <div class="mascot-image-placeholder" style="
-                        background-color: transparent; 
-                        border: none; 
-                        padding: 0;
-                        overflow: hidden; 
-                    ">
-                        <img src="BarbarianBob.jpg" alt="Cartoon Barbarian Mascot for Home Defender Pro" style="
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover; 
-                            border-radius: 50%;
-                        ">
+                    <div class="mascot-image-placeholder">
+                        <img src="BarbarianBob.jpg" alt="Cartoon Barbarian Mascot for Home Defender Pro">
                     </div>
                     <div class="mascot-text">
                         <h3>Meet Barbarian Bob: Your Home Defense Guide</h3>
@@ -514,7 +510,7 @@
 
                     <div class="course-card">
                         <div class="course-card-image-placeholder">
-                            
+                            [Image: A house with security lighting and smart landscaping]
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 1: Environmental Control</h3>
@@ -525,7 +521,7 @@
 
                     <div class="course-card">
                         <div class="course-card-image-placeholder">
-                            
+                            [Image: A reinforced door with a high-security deadbolt and camera]
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 2: Fortify Your Fortress</h3>
@@ -536,7 +532,7 @@
 
                     <div class="course-card">
                         <div class="course-card-image-placeholder">
-                            
+                            [Image: An eye looking through a peephole with an alerted expression]
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 3: Threat Recognition & Awareness</h3>
@@ -547,7 +543,7 @@
 
                     <div class="course-card">
                         <div class="course-card-image-placeholder">
-                            
+                            [Image: A family gathering silently in a designated safe room]
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 4: Non-Confrontational Evasion</h3>
