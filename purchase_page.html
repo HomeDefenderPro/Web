@@ -79,6 +79,7 @@
             transition: background-color 0.3s, transform 0.2s;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-decoration: none; /* Remove underline from the link */
         }
         .cta-button:hover {
             background-color: var(--accent-hover);
@@ -97,11 +98,11 @@
         <p class="subtitle">Please click the button below to be securely redirected to our payment processor.</p>
 
         <div class="item-details">
-            <p>Course: <span id="course-name">Pillar [X]: [Course Title]</span></p>
-            <p>Total Due: <strong><span id="course-price">$99 USD</span></strong></p>
+            <p>Course: <span id="course-name">Loading...</span></p>
+            <p>Total Due: <strong><span id="course-price">Loading...</span></strong></p>
         </div>
 
-        <a id="payment-link" href="#" class="cta-button">
+        <a id="payment-link" href="#" target="_blank" class="cta-button">
             Proceed to Secure Payment
         </a>
 
@@ -111,12 +112,18 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
-            const name = params.get('name') || 'Course Not Found';
-            const price = params.get('price') || '$0 USD';
-            const link = params.get('link') || '#';
+            
+            // Get data from URL, defaulting to "Not Found" if missing
+            const name = params.get('name') || 'Course Details Not Found';
+            const price = params.get('price') || 'Price Error';
+            // Get the final payment link
+            const link = params.get('link') || 'index.html'; 
 
+            // Update the HTML elements with the decoded data
             document.getElementById('course-name').textContent = decodeURIComponent(name);
             document.getElementById('course-price').textContent = decodeURIComponent(price);
+            
+            // Set the final link destination
             document.getElementById('payment-link').href = decodeURIComponent(link);
         });
     </script>
