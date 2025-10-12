@@ -264,14 +264,17 @@
         .course-card-image-placeholder {
             width: 100%;
             height: 180px; 
-            background-color: #dcdcdc; /* Lighter gray for course image placeholders */
+            /* background-color: #dcdcdc; REMOVED BG TO SHOW IMAGE */
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #888;
-            font-style: italic;
-            font-size: 0.9em;
-            border-bottom: 1px solid #bbb;
+            overflow: hidden; /* Ensure image fits */
+        }
+        .course-card-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the area without distortion */
+            display: block;
         }
         .course-card-content {
             padding: 25px;
@@ -358,7 +361,6 @@
             font-size: 1.2em;
             font-weight: 700;
             transition: background-color 0.3s, transform 0.2s;
-            letter-spacing: 0.5px;
         }
         .contact-form button:hover {
             background-color: var(--accent-hover);
@@ -510,7 +512,7 @@
 
                     <div class="course-card">
                         <div class="course-card-image-placeholder">
-                            [Image: A house with security lighting and smart landscaping]
+                            <img src="pillar1.jpg" alt="Pillar 1: Environmental Control">
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 1: Environmental Control</h3>
@@ -521,7 +523,7 @@
 
                     <div class="course-card">
                         <div class="course-card-image-placeholder">
-                            [Image: A reinforced door with a high-security deadbolt and camera]
+                            <img src="pillar2.jpg" alt="Pillar 2: Fortify Your Fortress">
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 2: Fortify Your Fortress</h3>
@@ -532,7 +534,7 @@
 
                     <div class="course-card">
                         <div class="course-card-image-placeholder">
-                            [Image: An eye looking through a peephole with an alerted expression]
+                            <img src="pillar3.jpg" alt="Pillar 3: Threat Recognition & Awareness">
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 3: Threat Recognition & Awareness</h3>
@@ -543,7 +545,7 @@
 
                     <div class="course-card">
                         <div class="course-card-image-placeholder">
-                            [Image: A family gathering silently in a designated safe room]
+                            <img src="pillar4.jpg" alt="Pillar 4: Non-Confrontational Evasion">
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 4: Non-Confrontational Evasion</h3>
