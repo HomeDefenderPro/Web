@@ -40,15 +40,20 @@
             --danger-color: #cc0000; /* Deeper red for alerts */
         }
 
-        /* TOP ALERT BAR (Fear Marketing) */
-        .alert-bar {
-            background-color: var(--danger-color);
+        /* NEW FEAR FACT BAR (Subtle and integrated) */
+        .fear-fact-bar {
+            background-color: var(--primary-dark);
             color: var(--light-bg);
-            padding: 10px 0;
+            padding: 12px 0;
             text-align: center;
-            font-size: 1.05em;
+            font-size: 0.95em;
             font-weight: 600;
+            border-bottom: 3px solid var(--accent-color);
         }
+        .fear-fact-bar strong {
+            color: var(--accent-color); /* Highlight the scary fact */
+        }
+
 
         /* HEADER & NAVIGATION */
         header {
@@ -65,7 +70,7 @@
             font-size: 1.8em;
             font-weight: 700;
             color: var(--primary-dark);
-            font-family: 'Roboto Slab', serif; /* Use heading font for logo */
+            font-family: 'Roboto Slab', serif;
         }
         nav a {
             margin-left: 30px;
@@ -78,16 +83,46 @@
 
         /* HERO SECTION */
         .hero {
-            background-color: var(--primary-dark); /* Deep, serious background */
-            color: var(--light-bg);
-            padding: 100px 0;
-            text-align: center;
+            background-color: #f7f7f7; /* Keep background light for professionalism */
+            padding: 0;
             position: relative;
-            overflow: hidden; 
+            overflow: hidden;
+            border-bottom: 1px solid #ddd;
         }
-        /* STAR RATING BLOCK */
+
+        /* NEW HERO CALLOUT BLOCK (White Background, Black Text) */
+        .hero-callout {
+            background-color: var(--light-bg); /* White background */
+            color: var(--primary-dark); /* Black/Dark text */
+            padding: 70px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+        }
+        .hero-callout h2 {
+            color: var(--primary-dark);
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .hero-callout p {
+            font-size: 1.4em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+            color: #444;
+        }
+        .certification-tag {
+            display: block;
+            font-size: 1.2em; /* Reduced size, less shouty */
+            font-weight: 700;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: none; /* Removed shadow for cleanliness */
+        }
+        /* STAR RATING BLOCK (Adapted for white background) */
         .rating-block {
-            background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent black */
+            background-color: #eee; /* Light gray background for contrast */
             padding: 10px 20px;
             display: inline-block;
             margin-bottom: 25px;
@@ -97,30 +132,17 @@
             font-size: 1.8em;
             color: gold;
             margin: 0;
-            line-height: 1; 
+            line-height: 1;
             display: inline-block;
             vertical-align: middle;
         }
         .rating-block span {
-            color: var(--light-bg);
-            font-size: 0.8em; 
+            color: var(--primary-dark); /* Dark text */
+            font-size: 0.8em;
             font-weight: 600;
             margin-left: 10px;
             vertical-align: middle;
             display: inline-block;
-        }
-        
-        .hero h2 {
-            color: var(--light-bg);
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 1.4em;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            font-weight: 400;
-            color: #ccc;
         }
         .cta-button {
             display: inline-block;
@@ -131,25 +153,15 @@
             font-weight: 700;
             border-radius: 5px;
             letter-spacing: 0.5px;
-            margin-top: 15px; 
+            margin-top: 15px;
             border: 2px solid var(--accent-color);
+            transition: background-color 0.3s, transform 0.2s;
         }
         .cta-button:hover {
             background-color: var(--accent-hover);
             border-color: var(--accent-hover);
             transform: translateY(-2px);
         }
-        .certification-tag {
-            display: block;
-            font-size: 1.7em;
-            font-weight: 700;
-            color: var(--accent-color); /* Highlight certification with accent color */
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
-        }
-
 
         /* MASCOT SECTION */
         .mascot-intro {
@@ -163,22 +175,22 @@
             align-items: center;
             justify-content: center;
             gap: 40px;
-            flex-wrap: wrap; 
+            flex-wrap: wrap;
         }
         .mascot-image-placeholder {
-            width: 200px; 
+            width: 200px;
             height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0; 
+            flex-shrink: 0;
         }
         .mascot-image-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 5px solid var(--light-bg); /* Clean border around the image */
+            border: 5px solid var(--light-bg);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         .mascot-text h3 {
@@ -189,7 +201,7 @@
         .mascot-text p {
             max-width: 600px;
             text-align: left;
-            margin: 0 auto; 
+            margin: 0 auto;
             color: #555;
         }
 
@@ -206,7 +218,7 @@
         }
         .value-points {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             text-align: left;
         }
@@ -215,7 +227,7 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--accent-color); /* Accent stripe */
+            border-left: 5px solid var(--accent-color);
             transition: transform 0.3s;
         }
         .value-point-card:hover {
@@ -254,7 +266,7 @@
             border-radius: 8px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             text-align: left;
-            overflow: hidden; 
+            overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .course-card:hover {
@@ -263,17 +275,16 @@
         }
         .course-card-image-placeholder {
             width: 100%;
-            height: 180px; 
-            /* background-color: #dcdcdc; REMOVED BG TO SHOW IMAGE */
+            height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden; /* Ensure image fits */
+            overflow: hidden;
         }
         .course-card-image-placeholder img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures image covers the area without distortion */
+            object-fit: cover;
             display: block;
         }
         .course-card-content {
@@ -307,7 +318,7 @@
 
         /* CONTACT FORM SECTION */
         .contact-form {
-            background-color: var(--primary-dark); /* Deep background for contrast */
+            background-color: var(--primary-dark);
             color: var(--light-bg);
             padding: 80px 20px;
             text-align: center;
@@ -338,10 +349,10 @@
             width: 100%;
             padding: 15px;
             border: 1px solid #555;
-            background-color: #3f4a56; /* Slightly lighter input background */
+            background-color: #3f4a56;
             color: var(--light-bg);
             border-radius: 4px;
-            box-sizing: border-box; 
+            box-sizing: border-box;
             font-size: 1em;
         }
         .contact-form input::placeholder, .contact-form textarea::placeholder {
@@ -369,7 +380,7 @@
 
         /* FOOTER */
         footer {
-            background-color: #111; /* Nearly black footer */
+            background-color: #111;
             color: #bbb;
             text-align: center;
             padding: 30px 0;
@@ -397,13 +408,13 @@
             nav a {
                 margin: 0 15px;
             }
-            .hero {
-                padding: 60px 0;
+            .hero-callout {
+                padding: 40px 0;
             }
-            .hero h2 {
+            .hero-callout h2 {
                 font-size: 2em;
             }
-            .hero p {
+            .hero-callout p {
                 font-size: 1.1em;
             }
             .modules h2, .contact-form h2 {
@@ -426,9 +437,11 @@
     </style>
 </head>
 <body>
-    
-    <div class="alert-bar">
-        ⚠️ **SCARY FACT:** A home burglary occurs in the U.S. every 26 seconds. Is your home prepared?
+
+    <div class="fear-fact-bar">
+        <div class="container">
+            ⚠️ **SCARY FACT:** A home burglary occurs in the U.S. every 26 seconds. Is your home prepared?
+        </div>
     </div>
 
     <header>
@@ -444,24 +457,26 @@
 
     <main>
         <section class="hero">
-            <div class="container">
-                <div class="rating-block">
-                    <div class="rating">★★★★★</div>
-                    <span>The Best Home Defense Training In The US</span>
-                </div>
-                
-                <p class="certification-tag">Get Home Defender Pro Certified!</p>
+            <div class="hero-callout">
+                <div class="container">
+                    <div class="rating-block">
+                        <div class="rating">★★★★★</div>
+                        <span>The Best Home Defense Training In The US</span>
+                    </div>
 
-                <h2>Fortify Your Home. Empower Your Family. Live Secure.</h2>
-                <p>Learn the **proactive security measures** and **non-lethal defense tactics** that deter 95% of threats before they ever reach your door. No confrontation, just solid preparedness.</p>
-                <a href="#courses" class="cta-button">Explore Courses & Start Your Transformation</a>
+                    <p class="certification-tag">Get Home Defender Pro Certified!</p>
+
+                    <h2>Fortify Your Home. Empower Your Family. Live Secure.</h2>
+                    <p>Learn the proactive security measures and non-lethal defense tactics that deter 95% of threats before they ever reach your door. No confrontation, just solid preparedness.</p>
+                    <a href="#courses" class="cta-button">Explore Courses & Start Your Transformation</a>
+                </div>
             </div>
         </section>
 
         <section class="mascot-intro">
             <div class="container">
                 <div class="mascot-content">
-                    
+
                     <div class="mascot-image-placeholder">
                         <img src="BarbarianBob.jpg" alt="Cartoon Barbarian Mascot for Home Defender Pro">
                     </div>
@@ -516,7 +531,7 @@
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 1: Environmental Control</h3>
-                            <p>Master the art of **deterrence**. Learn to analyze your surroundings, manage your online presence, and eliminate "low-hanging fruit" vulnerabilities that attract unwanted attention to your property.</p>
+                            <p>Master the art of deterrence. Learn to analyze your surroundings, manage your online presence, and eliminate "low-hanging fruit" vulnerabilities that attract unwanted attention to your property.</p>
                             <a href="course1.html" class="buy-link">Explore Course &rarr;</a>
                         </div>
                     </div>
@@ -527,7 +542,7 @@
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 2: Fortify Your Fortress</h3>
-                            <p>Transform your residence into an impenetrable stronghold. This course dives deep into **physical and technological barriers**, covering locks, optimal camera placement, and securing every potential entry point.</p>
+                            <p>Transform your residence into an impenetrable stronghold. This course dives deep into physical and technological barriers, covering locks, optimal camera placement, and securing every potential entry point.</p>
                             <a href="course2.html" class="buy-link">Explore Course &rarr;</a>
                         </div>
                     </div>
@@ -538,7 +553,7 @@
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 3: Threat Recognition & Awareness</h3>
-                            <p>Develop a mindset of **situational awareness**. Learn to spot pre-incident indicators, understand intruder psychology, and practice drills for recognizing danger both inside and outside the home.</p>
+                            <p>Develop a mindset of situational awareness. Learn to spot pre-incident indicators, understand intruder psychology, and practice drills for recognizing danger both inside and outside the home.</p>
                             <a href="course3.html" class="buy-link">Explore Course &rarr;</a>
                         </div>
                     </div>
@@ -549,7 +564,7 @@
                         </div>
                         <div class="course-card-content">
                             <h3>Pillar 4: Non-Confrontational Evasion</h3>
-                            <p>Develop a robust **emergency action plan** if an intruder bypasses your defenses. Learn critical exit strategies, how to create and utilize safe rooms, and tactical steps to protect your loved ones without direct engagement.</p>
+                            <p>Develop a robust emergency action plan if an intruder bypasses your defenses. Learn critical exit strategies, how to create and utilize safe rooms, and tactical steps to protect your loved ones without direct engagement.</p>
                             <a href="course4.html" class="buy-link">Explore Course &rarr;</a>
                         </div>
                     </div>
@@ -562,7 +577,7 @@
             <div class="container">
                 <h2>Have a Question or Security Scenario?</h2>
                 <p>Our team is here to help you secure your peace of mind. Submit your inquiries, security challenges, or feedback directly to us.</p>
-                
+
                 <form id="contactForm" onsubmit="submitToGoogleForm(event)">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email Address" required>
@@ -582,12 +597,12 @@
 
     <script>
         function submitToGoogleForm(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             // IMPORTANT: Replace this placeholder URL with the actual 'pre-filled form' URL from your Google Form
             const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfzY-PHOq0R7kYp0T6I-TfA/formResponse";
-            
+
             alert("Thank you for your question! We'll open your Google Form in a new window/tab for submission. Please ensure you have configured the GOOGLE_FORM_URL in the script tag.");
-            window.open(GOOGLE_FORM_URL, '_blank'); 
+            window.open(GOOGLE_FORM_URL, '_blank');
         }
     </script>
 
