@@ -4,212 +4,384 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Defender Pro | Proactive, Non-Lethal Home Security Training</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* BASIC CSS RESET & FONTS */
+        /* GLOBAL STYLES & RESET */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
+            background-color: #f8f8f8; /* Off-white background */
             color: #333;
+            line-height: 1.6;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px;
         }
-        
-        /* FEAR-BASED ALERT BAR */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #222;
+        }
+        a {
+            text-decoration: none;
+            color: #222;
+        }
+
+        /* ACCENT COLOR - Dark Gold/Orange for CTAs and highlights */
+        :root {
+            --accent-color: #b8860b; /* Dark Gold */
+            --accent-hover: #a1760a;
+            --danger-color: #dc3545;
+        }
+
+        /* TOP ALERT BAR (Fear Marketing) */
         .alert-bar {
-            background-color: #dc3545; /* Bright Red for Urgency/Danger */
+            background-color: var(--danger-color);
             color: #fff;
             padding: 10px 0;
             text-align: center;
-            font-size: 1.1em;
-            font-weight: bold;
-            text-transform: uppercase;
+            font-size: 1.05em;
+            font-weight: 600;
         }
 
+        /* HEADER & NAVIGATION (Minimalist) */
         header {
-            background-color: #007bff; /* Primary Blue */
-            color: #fff;
-            padding: 15px 0;
-            text-align: center;
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.2em;
-            font-weight: bold;
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        header p {
-            font-size: 1.1em;
-            margin: 5px 0 0;
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #222;
+        }
+        nav a {
+            margin-left: 30px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent-color);
         }
 
         /* HERO SECTION */
         .hero {
-            background-color: #e9ecef;
+            background-color: #333; /* Dark background for hero */
+            color: #fff;
+            padding: 100px 0;
             text-align: center;
-            padding: 80px 20px;
-            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden; /* For any background elements */
         }
         .hero h2 {
-            font-size: 2.5em;
-            color: #007bff;
-            margin-bottom: 15px;
+            color: #fff;
+            font-size: 3em;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .hero p {
-            font-size: 1.3em;
+            font-size: 1.4em;
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
+            font-weight: 400;
         }
-        /* STAR RATING STYLE */
-        .rating {
-            font-size: 1.5em; /* Larger stars */
+        .hero .rating {
+            font-size: 1.8em;
             color: gold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
-        .rating span {
-            color: #333; /* Text next to stars */
-            font-size: 0.7em;
-            font-weight: bold;
+        .hero .rating span {
+            color: #fff; /* White text for contrast */
+            font-size: 0.6em;
+            font-weight: 600;
             margin-left: 10px;
             vertical-align: top;
             display: inline-block;
             line-height: 1.5;
         }
-        
         .cta-button {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: #28a745; /* Green for CTA */
+            padding: 15px 35px;
+            background-color: var(--accent-color);
             color: #fff;
             text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
+            font-size: 1.25em;
+            font-weight: 700;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
+            letter-spacing: 0.5px;
         }
         .cta-button:hover {
-            background-color: #218838;
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* MASCOT SECTION */
+        .mascot-intro {
+            background-color: #e0e0e0; /* Light gray to separate from hero */
+            padding: 50px 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .mascot-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        .mascot-image-placeholder {
+            width: 200px; /* Adjust size as needed */
+            height: 200px;
+            background-color: #bbb;
+            border-radius: 50%; /* Circular placeholder */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9em;
+            flex-shrink: 0; /* Prevents shrinking */
+            border: 2px dashed #999;
+        }
+        .mascot-text h3 {
+            font-size: 2em;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .mascot-text p {
+            max-width: 600px;
+            text-align: left;
+            margin: 0 auto; /* Center paragraph */
+        }
+
+        /* VALUE PROPOSITION SECTION */
+        .value-prop {
+            background-color: #f8f8f8;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .value-prop h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        .value-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        .value-point-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-color);
+            transition: transform 0.3s;
+        }
+        .value-point-card:hover {
+            transform: translateY(-5px);
+        }
+        .value-point-card h3 {
+            font-size: 1.3em;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .value-point-card p {
+            font-size: 0.95em;
+            color: #555;
         }
 
         /* COURSE MODULES SECTION */
         .modules {
-            padding: 40px 0;
+            padding: 80px 0;
+            background-color: #fff;
             text-align: center;
+            border-top: 1px solid #eee;
         }
         .modules h2 {
-            color: #333;
-            font-size: 2em;
-            margin-bottom: 40px;
+            font-size: 2.5em;
+            margin-bottom: 50px;
         }
         .course-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
         .course-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
+            background-color: #f8f8f8;
             border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             text-align: left;
-            transition: transform 0.3s;
+            overflow: hidden; /* For image */
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .course-card:hover {
-            transform: translateY(-5px);
-        }
-        .course-card h3 {
-            color: #dc3545; 
-            margin-top: 0;
-            font-size: 1.5em;
-        }
-        .course-card p {
-            font-size: 1em;
-            line-height: 1.6;
-        }
-        .buy-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #007bff;
-            font-weight: bold;
-            text-decoration: none;
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
         .course-card-image-placeholder {
             width: 100%;
-            height: 180px; /* Standard height for course images */
-            background-color: #f0f0f0;
-            border-radius: 4px;
-            margin-bottom: 20px;
+            height: 220px; /* Slightly taller for visual impact */
+            background-color: #ccc;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #888;
+            color: #666;
             font-style: italic;
-            border: 1px dashed #ccc;
+            font-size: 0.9em;
+            border-bottom: 1px solid #bbb;
         }
+        .course-card-content {
+            padding: 25px;
+        }
+        .course-card-content h3 {
+            color: #222;
+            margin-top: 0;
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+        .course-card-content p {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .buy-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .buy-link:hover {
+            background-color: var(--accent-hover);
+        }
+
 
         /* CONTACT FORM SECTION */
         .contact-form {
-            background-color: #fff;
-            padding: 50px 20px;
+            background-color: #222; /* Dark background for contrast */
+            color: #fff;
+            padding: 80px 20px;
             text-align: center;
-            margin-top: 40px;
-            border-top: 2px solid #007bff;
+            border-top: 1px solid #444;
         }
         .contact-form h2 {
-            color: #007bff;
-            margin-bottom: 10px;
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 2.5em;
         }
         .contact-form p {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #bbb;
         }
         .contact-form form {
             max-width: 600px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
         .contact-form input[type="text"],
         .contact-form input[type="email"],
         .contact-form textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
+            padding: 15px;
+            border: 1px solid #555;
+            background-color: #333;
+            color: #fff;
             border-radius: 4px;
             box-sizing: border-box; 
             font-size: 1em;
         }
+        .contact-form input::placeholder, .contact-form textarea::placeholder {
+            color: #aaa;
+        }
         .contact-form textarea {
             resize: vertical;
-            min-height: 150px;
+            min-height: 180px;
         }
         .contact-form button {
-            background-color: #28a745;
+            background-color: var(--accent-color);
             color: #fff;
-            padding: 15px 20px;
+            padding: 18px 25px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 1.1em;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.2s;
+            letter-spacing: 0.5px;
         }
         .contact-form button:hover {
-            background-color: #218838;
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
         }
 
         /* FOOTER */
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #1a1a1a;
+            color: #bbb;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
             font-size: 0.9em;
-            margin-top: 40px;
+        }
+        footer a {
+            color: #bbb;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        /* RESPONSIVENESS */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 15px;
+            }
+            .hero {
+                padding: 60px 0;
+            }
+            .hero h2 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+            .modules h2, .contact-form h2 {
+                font-size: 2em;
+            }
+            .mascot-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .mascot-text {
+                text-align: center;
+            }
+            .mascot-text p {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -220,9 +392,13 @@
     </div>
 
     <header>
-        <div class="container">
-            <h1>HOME DEFENDER PRO</h1>
-            <p>Your Blueprint for Proactive, Non-Lethal Home Security Training.</p>
+        <div class="container header-content">
+            <a href="#" class="logo">HOME DEFENDER PRO</a>
+            <nav>
+                <a href="#courses">Courses</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </header>
 
@@ -233,77 +409,74 @@
                     ★★★★★
                     <span>The Best Home Defense Training In The US</span>
                 </div>
-                <h2>Protect Your Family. Secure Your Peace of Mind.</h2>
+                <h2>Fortify Your Home. Empower Your Family. Live Secure.</h2>
                 <p>Learn the **proactive security measures** and **non-lethal defense tactics** that deter 95% of threats before they ever reach your door. No confrontation, just solid preparedness.</p>
-                <a href="#courses" class="cta-button">See All Courses & Start Today</a>
+                <a href="#courses" class="cta-button">Explore Courses & Start Your Transformation</a>
+            </div>
+        </section>
+
+        <section class="mascot-intro">
+            <div class="container">
+                <div class="mascot-content">
+                    <div class="mascot-image-placeholder">
+                        Your Cartoon Barbarian Mascot Here (HomeDefenderPro Shirt) 
+                    </div>
+                    <div class="mascot-text">
+                        <h3>Meet Barbarian Bob: Your Home Defense Guide</h3>
+                        <p>Bob knows that true strength isn't just about wielding a sword—it's about smart strategy and impenetrable defenses. He's here to guide you through building a fortress out of your home, ensuring your peace of mind without ever having to raise a hand (unless it's to lock a door!).</p>
+                    </div>
+                </div>
+                 
+            </div>
+        </section>
+
+        <section id="about" class="value-prop">
+            <div class="container">
+                <h2>Why Home Defender Pro is Your Ultimate Shield:</h2>
+                <div class="value-points">
+                    <div class="value-point-card">
+                        <h3>Prevention-First Approach</h3>
+                        <p>Our training focuses on stopping threats before they escalate, using smart planning and environmental control.</p>
+                    </div>
+                    <div class="value-point-card">
+                        <h3>Non-Lethal Expertise</h3>
+                        <p>Secure your family and property without the need for firearms, focusing on physical hardening and evasion.</p>
+                    </div>
+                    <div class="value-point-card">
+                        <h3>Practical, Actionable Steps</h3>
+                        <p>Get clear, step-by-step guidance on cameras, locks, and security habits you can implement today.</p>
+                    </div>
+                    <div class="value-point-card">
+                        <h3>Empower Your Household</h3>
+                        <p>Give every member of your family the knowledge and confidence to contribute to your home's safety plan.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="courses" class="modules">
             <div class="container">
-                <h2>The 3 Pillars of Home Defense Pro Training</h2>
+                <h2>The 3 Pillars of Home Defender Pro Training</h2>
                 <div class="course-grid">
 
                     <div class="course-card">
                         <div class="course-card-image-placeholder">
-                            </div>
-                        <h3>Pillar 1: Environmental Control (The Low-Hanging Fruit)</h3>
-                        <p>Learn how to control your environment and eliminate opportunities that attract danger. We cover analyzing your neighborhood, managing social media visibility, **reducing "target appeal,"** and the critical habit of not surrounding yourself with high-value attractors.</p>
-                        <a href="course1.html" class="buy-link">Enroll in Environmental Control &rarr;</a>
+                             </div>
+                        <div class="course-card-content">
+                            <h3>Pillar 1: Environmental Control</h3>
+                            <p>Master the art of **deterrence**. Learn to analyze your surroundings, manage your online presence, and eliminate "low-hanging fruit" vulnerabilities that attract unwanted attention to your property. Understand how to make your home look less appealing to potential intruders.</p>
+                            <a href="course1.html" class="buy-link">Explore Course &rarr;</a>
+                        </div>
                     </div>
 
                     <div class="course-card">
                         <div class="course-card-image-placeholder">
-                            </div>
-                        <h3>Pillar 2: Fortify Your Fortress (Barriers & Systems)</h3>
-                        <p>Turn your home into a hard target. This module is focused on physical and technical security: **specific high-security lock types**, effective **camera placement** for maximum coverage, reinforcing entry points, and securing all accessible exits.</p>
-                        <a href="course2.html" class="buy-link">Enroll in Fortify Your Fortress &rarr;</a>
+                             </div>
+                        <div class="course-card-content">
+                            <h3>Pillar 2: Fortify Your Fortress</h3>
+                            <p>Transform your residence into an impenetrable stronghold. This course dives deep into **physical and technological barriers**, covering specific high-security lock types, optimal camera placement, window/door reinforcement, and securing every potential entry point.</p>
+                            <a href="course2.html" class="buy-link">Explore Course &rarr;</a>
+                        </div>
                     </div>
 
-                    <div class="course-card">
-                        <div class="course-card-image-placeholder">
-                            </div>
-                        <h3>Pillar 3: Non-Confrontational Evasion (The Safety Plan)</h3>
-                        <p>Master the crucial steps to take **prior to a confrontation** if entry is forced. This course outlines clear **emergency exit strategies**, safe room protocols, silent alerting methods, and the tactical steps to protect your family without ever engaging the intruder.</p>
-                        <a href="course3.html" class="buy-link">Enroll in Non-Confrontational Evasion &rarr;</a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-form">
-            <div class="container">
-                <h2>Have a Question or Defense Scenario?</h2>
-                <p>Submit your security questions, issues, or feedback directly to our team. We'll use your input to continuously improve our training.</p>
-                
-                <form id="contactForm" onsubmit="submitToGoogleForm(event)">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email Address" required>
-                    <textarea name="issue" placeholder="Your Question or Security Issue..." required></textarea>
-                    <button type="submit">Submit Question</button>
-                </form>
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            &copy; 2025 Home Defender Pro. All Rights Reserved. | Privacy Policy | Terms of Service
-        </div>
-    </footer>
-
-    <script>
-        function submitToGoogleForm(e) {
-            e.preventDefault(); 
-            // IMPORTANT: Replace this placeholder URL with the actual 'pre-filled form' URL from your Google Form
-            const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfzY-PHOq0R7kYp0T6I-TfA/formResponse";
-            
-            alert("This will now open your Google Form in a new window/tab for submission. Please configure the GOOGLE_FORM_URL in the script tag.");
-            window.location.href = GOOGLE_FORM_URL; 
-        }
-    </script>
-
-</body>
-</html>
+                    <div class="
