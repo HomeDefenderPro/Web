@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillar 1 Certification Quiz</title>
+    <style>
+        /* Add necessary styles for form layout, buttons, and error messages */
+        body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
+        .container { max-width: 700px; margin: 40px auto; padding: 25px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .question { margin-bottom: 20px; padding: 15px; border: 1px solid #e0e0e0; border-radius: 5px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; }
+        input[type="radio"] { margin-right: 10px; }
+        #results, #name-input-section { margin-top: 30px; padding: 20px; background-color: #f0f4ff; border-radius: 5px; }
+        button { padding: 10px 20px; background-color: #3f51b5; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; font-size: 1.1em; }
+        button:hover { background-color: #303f9f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pillar 1: Final Certification Quiz</h1>
+        <p>Answer the 10 questions below. You need at least 7 correct answers to earn your certificate.</p>
+        
+        <div id="quiz-form">
+            <div id="name-input-section">
+                <label for="user-name">Enter your full name for the certificate:</label>
+                <input type="text" id="user-name" placeholder="John Doe" required style="width: 80%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+
+            <div class="question">
+                <p>1. Which of these is a key aspect of "Perimeter Psychology"?</p>
+                <label><input type="radio" name="q1" value="A"> A. Having a large dog.</label>
+                <label><input type="radio" name="q1" value="B"> B. Making the property look difficult and unappealing.</label>
+                <label><input type="radio" name="q1" value="C"> C. Installing heavy security bars.</label>
+            </div>
+            
+            <div class="question">
+                <p>2. What is the primary purpose of auditing your digital footprint?</p>
+                <label><input type="radio" name="q2" value="A"> A. To find old photos.</label>
+                <label><input type="radio" name="q2" value="B"> B. To prevent identity theft and pre-incident intelligence gathering.</label>
+                <label><input type="radio" name="q2" value="C"> C. To increase social media followers.</label>
+            </div>
+            <button onclick="submitQuiz()">Submit Quiz for Certification</button>
+        </div>
+
+        <div id="results" style="display:none;">
+            <h2>Results:</h2>
+            <p id="score-message"></p>
+        </div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            q1: 'B', 
+            q2: 'B',
+            // ... Add correct answers for q3 through q10 here ...
+            q3: 'A', q4: 'C', q5: 'B', q6: 'A', q7: 'C', q8: 'B', q9: 'A', q10: 'C' 
+        };
+        const minimumScore = 7;
+
+        function submitQuiz() {
+            const userName = document.getElementById('user-name').value.trim();
+            if (!userName) {
+                alert("Please enter your name to receive your certificate!");
+                return;
+            }
+
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const qName = 'q' + i;
+                const selected = document.querySelector(`input[name="${qName}"]:checked`);
+                
+                // Safety check: ensure all questions are answered
+                if (!selected) {
+                    alert("Please answer all questions before submitting.");
+                    return;
+                }
+
+                if (selected.value === correctAnswers[qName]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('quiz-form').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+
+            if (score >= minimumScore) {
+                const message = `Congratulations, ${userName}! You scored ${score}/${totalQuestions}. You have passed the certification!`;
+                document.getElementById('score-message').innerHTML = message;
+
+                // URL-encode the name and redirect to the certificate page
+                const encodedName = encodeURIComponent(userName);
+                const certificationTitle = encodeURIComponent("Environmental Control Specialist");
+                
+                // Redirecting to the certificate page
+                window.location.href = `certificate_generator.html?name=${encodedName}&title=${certificationTitle}`;
+            } else {
+                const message = `I'm sorry, ${userName}. You scored ${score}/${totalQuestions}. You need ${minimumScore} to pass. Please review the course material and try again.`;
+                document.getElementById('score-message').innerHTML = `<span style="color: ${score >= minimumScore ? 'green' : 'red'};">${message}</span>`;
+            }
+        }
+    </script>
+</body>
+</html>
