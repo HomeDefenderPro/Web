@@ -4,103 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pillar 1 Certification Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Add necessary styles for form layout, buttons, and error messages */
-        body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
-        .container { max-width: 700px; margin: 40px auto; padding: 25px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .question { margin-bottom: 20px; padding: 15px; border: 1px solid #e0e0e0; border-radius: 5px; }
-        label { display: block; margin-bottom: 8px; font-weight: 600; }
-        input[type="radio"] { margin-right: 10px; }
-        #results, #name-input-section { margin-top: 30px; padding: 20px; background-color: #f0f4ff; border-radius: 5px; }
-        button { padding: 10px 20px; background-color: #3f51b5; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; font-size: 1.1em; }
-        button:hover { background-color: #303f9f; }
+        /* Define your visual styling using CSS variables */
+        :root {
+            --primary-color: #3f51b5; /* Blue */
+            --secondary-color: #f0f4ff; /* Light Blue */
+            --text-dark: #1e272e;
+            --text-medium: #444;
+            --background-light: #f7f7f7;
+            --module-bg: #fff;
+            --shadow-lift: 0 4px 12px rgba(0,0,0,0.05);
+            --correct-color: #4CAF50; /* Green */
+            --incorrect-color: #F44336; /* Red */
+        }
+        /* Global and Utility Styles */
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--background-light); color: var(--text-medium); line-height: 1.6; }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
+        h1 { font-family: 'Roboto Slab', serif; color: var(--primary-color); text-align: center; border-bottom: 3px solid var(--primary-color); padding-bottom: 15px; }
+        
+        /* Quiz Form and Question Styling */
+        .quiz-form { background-color: var(--module-bg); padding: 30px; border-radius: 8px; box-shadow: var(--shadow-lift); }
+        .question-block { margin-bottom: 25px; padding: 20px; border: 1px solid #e0e0e0; border-radius: 6px; }
+        .question-block p { font-weight: 700; margin-top: 0; color: var(--text-dark); }
+        .question-block label { display: block; margin-bottom: 8px; cursor: pointer; }
+        .question-block input[type="radio"] { margin-right: 8px; }
+
+        /* Submission and Results */
+        .submit-btn {
+            display: block; width: 100%; padding: 15px; background-color: var(--primary-color); 
+            color: white; font-weight: 700; border: none; border-radius: 5px; cursor: pointer;
+            font-size: 1.1em; transition: background-color 0.3s;
+        }
+        .submit-btn:hover { background-color: #303f9f; }
+
+        #results { 
+            margin-top: 30px; padding: 25px; background-color: var(--secondary-color); 
+            border-radius: 8px; text-align: center; border: 2px solid var(--primary-color);
+            display: none; /* Initially hidden */
+        }
+        #score-display { font-size: 2.5em; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+        .passed { color: var(--correct-color); }
+        .failed { color: var(--incorrect-color); }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Pillar 1: Final Certification Quiz</h1>
-        <p>Answer the 10 questions below. You need at least 7 correct answers to earn your certificate.</p>
-        
-        <div id="quiz-form">
-            <div id="name-input-section">
-                <label for="user-name">Enter your full name for the certificate:</label>
-                <input type="text" id="user-name" placeholder="John Doe" required style="width: 80%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            </div>
+        <h1>Pillar 1: Environmental Control Certification Quiz</h1>
+        <p>This assessment covers the core principles of **Concealment Denial**, **Intelligence Denial**, and **Advanced Deterrence**. You must score **8/10 or higher** to pass.</p>
 
-            <div class="question">
-                <p>1. Which of these is a key aspect of "Perimeter Psychology"?</p>
-                <label><input type="radio" name="q1" value="A"> A. Having a large dog.</label>
-                <label><input type="radio" name="q1" value="B"> B. Making the property look difficult and unappealing.</label>
-                <label><input type="radio" name="q1" value="C"> C. Installing heavy security bars.</label>
-            </div>
+        <form class="quiz-form" id="p1-quiz">
             
-            <div class="question">
-                <p>2. What is the primary purpose of auditing your digital footprint?</p>
-                <label><input type="radio" name="q2" value="A"> A. To find old photos.</label>
-                <label><input type="radio" name="q2" value="B"> B. To prevent identity theft and pre-incident intelligence gathering.</label>
-                <label><input type="radio" name="q2" value="C"> C. To increase social media followers.</label>
+            <div class="question-block">
+                <p>1. **True or False:** A gated community's primary defense element is considered an impenetrable layer that stops all dedicated intruders from accessing the property.</p>
+                <label><input type="radio" name="q1" value="True"> True</label>
+                <label><input type="radio" name="q1" value="False"> False</label>
             </div>
-            <button onclick="submitQuiz()">Submit Quiz for Certification</button>
+
+            <div class="question-block">
+                <p>2. What element, when combined with an "Affluence Signal," most increases a property's vulnerability by providing a critical Avenue of Escape (AoE)?</p>
+                <label><input type="radio" name="q2" value="A"> Dense landscaping</label>
+                <label><input type="radio" name="q2" value="B"> Proximity to public transit systems</label>
+                <label><input type="radio" name="q2" value="C"> Cool white exterior lighting</label>
+                <label><input type="radio" name="q2" value="D"> Use of multiple internal timers</label>
+            </div>
+
+            <div class="question-block">
+                <p>3. A "blind spot" is defined as any area where a trespasser can linger unobserved for at least how long?</p>
+                <label><input type="radio" name="q3" value="A"> 15 seconds</label>
+                <label><input type="radio" name="q3" value="B"> 30 seconds</label>
+                <label><input type="radio" name="q3" value="C"> 60 seconds</label>
+                <label><input type="radio" name="q3" value="D"> 5 minutes</label>
+            </div>
+
+            <div class="question-block">
+                <p>4. The core psychological goal of systematically layering cameras and motion-activated lights is to **deny the intruder:**</p>
+                <label><input type="radio" name="q4" value="A"> The reward</label>
+                <label><input type="radio" name="q4" value="B"> Elusiveness (the ability to hide)</label>
+                <label><input type="radio" name="q4" value="C"> Access to the internet</label>
+                <label><input type="radio" name="q4" value="D"> All avenues of escape</label>
+            </div>
+
+            <div class="question-block">
+                <p>5. **True or False:** In defensive security terminology, "Cover" is a material like stacked boxes or dense foliage, while "Concealment" is a material like concrete or steel that stops a bullet.</p>
+                <label><input type="radio" name="q5" value="True"> True</label>
+                <label><input type="radio" name="q5" value="False"> False</label>
+            </div>
+
+            <div class="question-block">
+                <p>6. The "Visibility Layer" (Layer 1, nearest the foundation) should primarily utilize plants of what height to ensure clear sightlines?</p>
+                <label><input type="radio" name="q6" value="A"> Less than 3 feet</label>
+                <label><input type="radio" name="q6" value="B"> At least 6 feet</label>
+                <label><input type="radio" name="q6" value="C"> Dense, concealing shrubs</label>
+                <label><input type="radio" name="q6" value="D"> Barrier Plants</label>
+            </div>
+
+            <div class="question-block">
+                <p>7. To most effectively simulate human occupancy, what lighting method should be used?</p>
+                <label><input type="radio" name="q7" value="A"> A single light on a static timer</label>
+                <label><input type="radio" name="q7" value="B"> Only motion-activated exterior lights</label>
+                <label><input type="radio" name="q7" value="C"> Multiple staggered timers on varied indoor lights</label>
+                <label><input type="radio" name="q7" value="D"> Harsh spotlights to create deep shadows</label>
+            </div>
+
+            <div class="question-block">
+                <p>8. The Vacation Blackout Protocol mandates that social media silence must begin when?</p>
+                <label><input type="radio" name="q8" value="A"> The day you leave</label>
+                <label><input type="radio" name="q8" value="B"> Two weeks before departure</label>
+                <label><input type="radio" name="q8" value="C"> After you return home</label>
+                <label><input type="radio" name="q8" value="D"> Only while you are on the plane</label>
+            </div>
+
+            <div class="question-block">
+                <p>9. According to the High-Risk Days/Times analysis, when do most residential burglaries statistically occur?</p>
+                <label><input type="radio" name="q9" value="A"> Late at night (10 PM - 6 AM)</label>
+                <label><input type="radio" name="q9" value="B"> During the day (10 AM - 3 PM) on weekdays</label>
+                <label><input type="radio" name="q9" value="C"> Early mornings on weekends</label>
+                <label><input type="radio" name="q9" value="D"> During major national holidays</label>
+            </div>
+
+            <div class="question-block">
+                <p>10. What is the most critical Intelligence Denial protocol for trash management?</p>
+                <label><input type="radio" name="q10" value="A"> Recycling all cardboard boxes</label>
+                <label><input type="radio" name="q10" value="B"> Leaving sensitive papers in clear bags</label>
+                <label><input type="radio" name="q10" value="C"> Shredding all documents with personal identifiers</label>
+                <label><input type="radio" name="q10" value="D"> Only taking the trash out on Sunday nights</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit and Get Certified</button>
+        </form>
+
+        <div id="results">
+            <h2>Quiz Results</h2>
+            <p id="score-display">Your Score: 0/10</p>
+            <p id="certification-message"></p>
         </div>
 
-        <div id="results" style="display:none;">
-            <h2>Results:</h2>
-            <p id="score-message"></p>
-        </div>
     </div>
 
     <script>
-        const correctAnswers = {
-            q1: 'B', 
-            q2: 'B',
-            // ... Add correct answers for q3 through q10 here ...
-            q3: 'A', q4: 'C', q5: 'B', q6: 'A', q7: 'C', q8: 'B', q9: 'A', q10: 'C' 
-        };
-        const minimumScore = 7;
+        document.getElementById('p1-quiz').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the form from submitting normally
 
-        function submitQuiz() {
-            const userName = document.getElementById('user-name').value.trim();
-            if (!userName) {
-                alert("Please enter your name to receive your certificate!");
-                return;
-            }
+            const correctAnswers = {
+                q1: 'False', // Takeaway 1.1: Gate is NOT an impenetrable primary defense.
+                q2: 'B',     // Takeaway 1.1: Public transit provides Avenue of Escape (AoE).
+                q3: 'C',     // Module 1.2: Blind spot is 60 seconds or more.
+                q4: 'B',     // Takeaway 1.2: Denying elusiveness/the ability to hide.
+                q5: 'False', // Takeaway 1.3: Concealment hides, Cover stops bullets (the definitions were swapped in the question).
+                q6: 'A',     // Module 1.3: Visibility Layer (Layer 1) uses plants less than 3 feet.
+                q7: 'C',     // Takeaway 1.4: Multiple staggered timers create complex, irregular patterns.
+                q8: 'B',     // Takeaway 1.5: Silence must begin two weeks before departure.
+                q9: 'B',     // Takeaway 1.6: Most common time is 10 AM - 3 PM on weekdays.
+                q10: 'C'     // Module 1.6: Shredding documents is the most critical Intelligence Denial step.
+            };
 
             let score = 0;
-            let totalQuestions = Object.keys(correctAnswers).length;
+            const form = event.target;
+            const totalQuestions = 10;
 
             for (let i = 1; i <= totalQuestions; i++) {
                 const qName = 'q' + i;
-                const selected = document.querySelector(`input[name="${qName}"]:checked`);
-                
-                // Safety check: ensure all questions are answered
-                if (!selected) {
-                    alert("Please answer all questions before submitting.");
-                    return;
-                }
-
-                if (selected.value === correctAnswers[qName]) {
+                const selected = form.elements[qName].value;
+                if (selected === correctAnswers[qName]) {
                     score++;
                 }
             }
 
-            document.getElementById('quiz-form').style.display = 'none';
-            document.getElementById('results').style.display = 'block';
+            // Display results
+            const resultsDiv = document.getElementById('results');
+            const scoreDisplay = document.getElementById('score-display');
+            const message = document.getElementById('certification-message');
+            
+            scoreDisplay.textContent = `Your Score: ${score}/${totalQuestions}`;
+            resultsDiv.style.display = 'block';
 
-            if (score >= minimumScore) {
-                const message = `Congratulations, ${userName}! You scored ${score}/${totalQuestions}. You have passed the certification!`;
-                document.getElementById('score-message').innerHTML = message;
-
-                // URL-encode the name and redirect to the certificate page
-                const encodedName = encodeURIComponent(userName);
-                const certificationTitle = encodeURIComponent("Environmental Control Specialist");
-                
-                // Redirecting to the certificate page
-                window.location.href = `certificate_generator.html?name=${encodedName}&title=${certificationTitle}`;
+            if (score >= 8) {
+                message.innerHTML = '🎉 **Congratulations! You are Certified!** You have successfully mastered Pillar 1: Environmental Control.';
+                message.className = 'passed';
             } else {
-                const message = `I'm sorry, ${userName}. You scored ${score}/${totalQuestions}. You need ${minimumScore} to pass. Please review the course material and try again.`;
-                document.getElementById('score-message').innerHTML = `<span style="color: ${score >= minimumScore ? 'green' : 'red'};">${message}</span>`;
+                message.innerHTML = '😞 **Certification Failed.** You must score 8/10 or higher. Please review the modules and try again.';
+                message.className = 'failed';
             }
-        }
+        });
     </script>
 </body>
 </html>
