@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillar 4 Certification Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define your visual styling using CSS variables */
+        :root {
+            --primary-color: #008080; /* Teal/Cyan for Digital Focus */
+            --secondary-color: #e0ffff; /* Light Cyan */
+            --text-dark: #1e272e;
+            --text-medium: #444;
+            --background-light: #f7f7f7;
+            --module-bg: #fff;
+            --shadow-lift: 0 4px 12px rgba(0,0,0,0.05);
+            --correct-color: #4CAF50; /* Green */
+            --incorrect-color: #F44336; /* Red */
+            --gold-color: #FFD700;
+        }
+        /* Global and Utility Styles */
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--background-light); color: var(--text-medium); line-height: 1.6; }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
+        h1 { font-family: 'Roboto Slab', serif; color: var(--primary-color); text-align: center; border-bottom: 3px solid var(--primary-color); padding-bottom: 15px; }
+        
+        /* Quiz Form and Question Styling */
+        .quiz-form { background-color: var(--module-bg); padding: 30px; border-radius: 8px; box-shadow: var(--shadow-lift); }
+        .question-block { margin-bottom: 25px; padding: 20px; border: 1px solid #e0e0e0; border-radius: 6px; }
+        .question-block p { font-weight: 700; margin-top: 0; color: var(--text-dark); }
+        .question-block label { display: block; margin-bottom: 8px; cursor: pointer; }
+        .question-block input[type="radio"] { margin-right: 8px; }
 
+        /* Submission and Results */
+        .submit-btn {
+            display: block; width: 100%; padding: 15px; background-color: var(--primary-color); 
+            color: white; font-weight: 700; border: none; border-radius: 5px; cursor: pointer;
+            font-size: 1.1em; transition: background-color 0.3s;
+        }
+        .submit-btn:hover { background-color: #006666; }
+
+        #results { 
+            margin-top: 30px; padding: 25px; background-color: var(--secondary-color); 
+            border-radius: 8px; text-align: center; border: 2px solid var(--primary-color);
+            display: none; /* Initially hidden */
+        }
+        #score-display { font-size: 2.5em; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+        .passed { color: var(--correct-color); }
+        .failed { color: var(--incorrect-color); }
+
+        .cert-link {
+            font-size: 1.1em;
+            color: var(--correct-color); /* Green */
+            text-decoration: underline;
+            cursor: pointer;
+            display: block;
+            margin-top: 15px;
+        }
+
+        /* Certification Display Styling (for reference) */
+        .certification-sheet {
+            margin-top: 25px;
+            padding: 40px 20px;
+            border: 5px double var(--gold-color);
+            background-color: #ffffff;
+            color: var(--text-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .certification-sheet h2 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .certification-sheet .cert-name {
+            font-size: 2em;
+            color: var(--gold-color);
+            font-weight: 700;
+            margin: 15px 0;
+            border-bottom: 2px solid #e0e0e0;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .certification-sheet .cert-text {
+            font-size: 1.4em;
+            margin: 20px 0;
+        }
+        .certification-sheet .cert-text strong {
+            font-weight: 700;
+        }
+        .certification-sheet .cert-date {
+            font-size: 1em;
+            margin-top: 30px;
+            color: var(--text-medium);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pillar 4: Digital Perimeter and Counter-Surveillance Certification Quiz</h1>
+        <p>This assessment covers the core principles of **OPSEC**, **Network Hardening**, and **Reconnaissance Detection**. You must score **8/10 or higher** to pass.</p>
+
+        <form class="quiz-form" id="p4-quiz">
+            
+            <div class="question-block">
+                <p>1. What is the **minimum delay** (the "48-Hour Rule") required before posting vacation check-ins or photos of high-value assets to social media?</p>
+                <label><input type="radio" name="q1" value="A"> 6 hours</label>
+                <label><input type="radio" name="q1" value="B"> 24 hours</label>
+                <label><input type="radio" name="q1" value="C"> 48 hours</label>
+                <label><input type="radio" name="q1" value="D"> 7 days</label>
+            </div>
+
+            <div class="question-block">
+                <p>2. For advanced security, what is the recommended legal action to prevent simple searches from revealing your personal name and address in public land records?</p>
+                <label><input type="radio" name="q2" value="A"> Paying a fee to the county recorder</label>
+                <label><input type="radio" name="q2" value="B"> Transferring property ownership to a Trust or LLC</label>
+                <label><input type="radio" name="q2" value="C"> Using a P.O. Box for all mail</label>
+                <label><input type="radio" name="q2" value="D"> Disabling geotagging on photos</label>
+            </div>
+
+            <div class="question-block">
+                <p>3. What is the single most critical network hardening step required to prevent a hack on a vulnerable smart device (like a camera) from reaching your sensitive computers?</p>
+                <label><input type="radio" name="q3" value="A"> Changing the Wi-Fi password monthly</label>
+                <label><input type="radio" name="q3" value="B"> Using a paid VPN service</label>
+                <label><input type="radio" name="q3" value="C"> Implementing Network Segmentation (a separate IoT/Guest network)</label>
+                <label><input type="radio" name="q3" value="D"> Using only WPA2 encryption</label>
+            </div>
+
+            <div class="question-block">
+                <p>4. Which two router functions are known security liabilities and should be immediately disabled in the router settings?</p>
+                <label><input type="radio" name="q4" value="A"> 5GHz Band and QoS (Quality of Service)</label>
+                <label><input type="radio" name="q4" value="B"> Firewall and MAC filtering</label>
+                <label><input type="radio" name="q4" value="C"> WPA2 and Parental Controls</label>
+                <label><input type="radio" name="q4" value="D"> WPS (Wi-Fi Protected Setup) and UPnP (Universal Plug and Play)</label>
+            </div>
+
+            <div class="question-block">
+                <p>5. Which method of Two-Factor Authentication (2FA) is considered more secure and is mandated over SMS text messages?</p>
+                <label><input type="radio" name="q5" value="A"> Email verification links</label>
+                <label><input type="radio" name="q5" value="B"> Physical hardware keys (e.g., YubiKey)</label>
+                <label><input type="radio" name="q5" value="C"> Dedicated authenticator app (e.g., Authy or Google Authenticator)</label>
+                <label><input type="radio" name="q5" value="D"> Voice verification</label>
+            </div>
+
+            <div class="question-block">
+                <p>6. What is the most effective proactive counter-surveillance measure to force a surveillance team to reveal themselves?</p>
+                <label><input type="radio" name="q6" value="A"> Installing more cameras</label>
+                <label><input type="radio" name="q6" value="B"> Posting a "No Trespassing" sign</label>
+                <label><input type="radio" name="q6" value="C"> Implement Pattern Disruption (regularly changing your routine)</label>
+                <label><input type="radio" name="q6" value="D"> Leaving lights on 24/7</label>
+            </div>
+
+            <div class="question-block">
+                <p>7. If an unsolicited maintenance or utility worker shows suspicious interest in your home's security, what should you do immediately?</p>
+                <label><input type="radio" name="q7" value="A"> Ask to see their identification badge</label>
+                <label><input type="radio" name="q7" value="B"> Call the company’s main line (independently looked up) to verify the work schedule</label>
+                <label><input type="radio" name="q7" value="C"> Politely ask them to leave the property</label>
+                <label><input type="radio" name="q7" value="D"> Take a photo and post it to social media</label>
+            </div>
+
+            <div class="question-block">
+                <p>8. What should you do to confirm active surveillance if you suspect you are being followed in your car?</p>
+                <label><input type="radio" name="q8" value="A"> Drive home immediately</label>
+                <label><input type="radio" name="q8" value="B"> Confront the driver directly</label>
+                <label><input type="radio" name="q8" value="C"> Drive a pre-planned, high-traffic loop (e.g., past a police station or public camera)</label>
+                <label><input type="radio" name="q8" value="D"> Speed up and lose them in traffic</label>
+            </div>
+
+            <div class="question-block">
+                <p>9. After confirming physical reconnaissance on your property, which resource should you use for initial reporting?</p>
+                <label><input type="radio" name="q9" value="A"> The FBI's online tip form</label>
+                <label><input type="radio" name="q9" value="B"> Your neighborhood watch group</label>
+                <label><input type="radio" name="q9" value="C"> The local police department's non-emergency line</label>
+                <label><input type="radio" name="q9" value="D"> A private security consultant</label>
+            </div>
+
+            <div class="question-block">
+                <p>10. What is the security risk of relying solely on cloud storage for your security camera footage?</p>
+                <label><input type="radio" name="q10" value="A"> It is too expensive</label>
+                <label><input type="radio" name="q10" value="B"> It requires two-factor authentication</label>
+                <label><input type="radio" name="q10" value="C"> The evidence is lost if the internet or power is cut during a breach attempt</label>
+                <label><input type="radio" name="q10" value="D"> It exposes your primary network</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit and Get Certified</button>
+        </form>
+
+        <div id="results">
+            <h2>Quiz Results</h2>
+            <p id="score-display">Your Score: 0/10</p>
+            <p id="certification-message"></p>
+        </div>
+
+    </div>
+
+    <script>
+        // Function to handle the certification generation (simulated)
+        function getCertification() {
+            const name = prompt("Please enter the name you would like to appear on your certification sheet:");
+            
+            if (name) {
+                const resultsDiv = document.getElementById('results');
+                const currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                
+                // Create the HTML structure for the certification sheet
+                const certHtml = `
+                    <div class="certification-sheet">
+                        <h2>Certificate of Completion</h2>
+                        <div class="cert-text">This certifies that</div>
+                        <div class="cert-name">${name.toUpperCase()}</div>
+                        <div class="cert-text">Congrats! You Completed the Home Defender Pro Pillar 4 Safety Course.</div>
+                        <div class="cert-text">You are now <strong>Home Defender Pro Pillar 4 Certified</strong>.</div>
+                        <div class="cert-date">Date Completed: ${currentDate}</div>
+                    </div>
+                `;
+                
+                // Replace the results content with the certification sheet
+                resultsDiv.innerHTML = certHtml;
+            } else {
+                alert("Certification sheet cannot be generated without a name.");
+            }
+        }
+
+        // Event listener for quiz submission
+        document.getElementById('p4-quiz').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the form from submitting normally
+
+            // Correct answers based on the module content
+            const correctAnswers = {
+                q1: 'C', // 48 hours
+                q2: 'B', // Transferring property ownership to a Trust or LLC
+                q3: 'C', // Implementing Network Segmentation (a separate IoT/Guest network)
+                q4: 'D', // WPS (Wi-Fi Protected Setup) and UPnP (Universal Plug and Play)
+                q5: 'C', // Dedicated authenticator app (e.g., Authy or Google Authenticator)
+                q6: 'C', // Implement Pattern Disruption (regularly changing your routine)
+                q7: 'B', // Call the company’s main line (independently looked up) to verify the work schedule
+                q8: 'C', // Drive a pre-planned, high-traffic loop
+                q9: 'C', // The local police department's non-emergency line
+                q10: 'C' // The evidence is lost if the internet or power is cut during a breach attempt (This promotes the NVR/local storage redundancy mentioned in M2.3 and implied in M4.2)
+            };
+
+            let score = 0;
+            const form = event.target;
+            const totalQuestions = 10;
+            const passingScore = 8; // Required score to pass
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const qName = 'q' + i;
+                const selected = form.elements[qName].value;
+                if (selected === correctAnswers[qName]) {
+                    score++;
+                }
+            }
+
+            // Display results
+            const resultsDiv = document.getElementById('results');
+            const scoreDisplay = document.getElementById('score-display');
+            const message = document.getElementById('certification-message');
+            
+            scoreDisplay.textContent = `Your Score: ${score}/${totalQuestions}`;
+            resultsDiv.style.display = 'block';
+
+            if (score >= passingScore) {
+                message.innerHTML = `
+                    <p class="passed">🎉 <strong>Congratulations! You are Certified!</strong> You have successfully mastered Pillar 4: Digital Perimeter and Counter-Surveillance.</p>
+                    <span class="cert-link" onclick="getCertification()">Get Certification Sheet</span>
+                `;
+                message.className = '';
+            } else {
+                message.innerHTML = '😞 <strong>Certification Failed.</strong> You must score 8/10 or higher. Please review the modules and try again.';
+                message.className = 'failed';
+            }
+        });
+    </script>
+</body>
+</html>
