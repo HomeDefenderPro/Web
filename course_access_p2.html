@@ -6,53 +6,141 @@
     <title>Pillar 2: Fortify Your Fortress Course Access</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ADD ALL YOUR SITE STYLES HERE */
-        :root { --primary-dark: #1e272e; --accent-color: #3f51b5; --light-bg: #fff; }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f7f7f7; color: #444; }
+        /* Define your visual styling using CSS variables */
+        :root {
+            --primary-color: #3f51b5; /* Blue */
+            --secondary-color: #f0f4ff; /* Light Blue */
+            --text-dark: #1e272e;
+            --text-medium: #444;
+            --background-light: #f7f7f7;
+            --module-bg: #fff;
+            --shadow-lift: 0 4px 12px rgba(0,0,0,0.05);
+            --takeaway-color: #2e7d32; /* Dark Green for emphasis */
+        }
+        /* Global and Utility Styles */
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--background-light); color: var(--text-medium); line-height: 1.6; }
         .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
-        h1, h2 { font-family: 'Roboto Slab', serif; color: #1e272e; }
-        .module-section { margin-bottom: 50px; padding: 30px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .module-section h2 { color: #3f51b5; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; }
-        .quiz-cta { text-align: center; padding: 40px; background-color: #f0f4ff; border: 2px dashed #3f51b5; border-radius: 8px; }
-        .quiz-cta a { display: inline-block; padding: 15px 30px; background-color: #3f51b5; color: white; font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.2em; transition: background-color 0.3s; }
-        .quiz-cta a:hover { background-color: #303f9f; }
+        h1, h2, h3 { font-family: 'Roboto Slab', serif; color: var(--text-dark); }
+
+        /* Module Styling */
+        .module-section { margin-bottom: 50px; padding: 30px; background-color: var(--module-bg); border-radius: 8px; box-shadow: var(--shadow-lift); }
+        .module-section h2 { color: var(--primary-color); border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; }
+        .module-section p strong { color: var(--text-dark); }
+        .module-section ul { padding-left: 20px; margin-bottom: 15px; }
+        .key-concept { background-color: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        .key-concept strong { color: #ff9800; }
+        .gated-table { width: 100%; border-collapse: collapse; text-align: left; }
+        .gated-table th, .gated-table td { border: 1px solid #ddd; padding: 10px; }
+        .gated-table th { background-color: #f2f2f2; }
+
+        /* Takeaways Styles */
+        .module-takeaways { margin-top: 25px; padding: 20px; border: 1px solid var(--takeaway-color); background-color: #e8f5e9; border-radius: 4px; }
+        .module-takeaways h3 { color: var(--takeaway-color); margin-top: 0; font-size: 1.3em; border-bottom: 1px solid var(--takeaway-color); padding-bottom: 5px; }
+        .module-takeaways p { margin: 0; font-weight: 600; line-height: 1.4; }
+        
+        /* Call to Action Styling */
+        .quiz-cta { text-align: center; padding: 40px; background-color: var(--secondary-color); border: 2px dashed var(--primary-color); border-radius: 8px; }
+        .quiz-cta a {
+            display: inline-block; padding: 15px 30px; background-color: var(--primary-color); color: white;
+            font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .quiz-cta a:hover {
+            background-color: #303f9f;
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+        .quiz-cta h2 { color: var(--text-dark); }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome, Home Defender!</h1>
-        <p>You have successfully unlocked **Pillar 2: Fortify Your Fortress**. Start your training below.</p>
+        <p>You have successfully unlocked <strong>Pillar 2: Fortify Your Fortress</strong>. This training moves from deterrence to physical, technical security, focusing on eliminating the **Breach Window**—the time an intruder has to gain entry before being stopped or identified. Start your training below.</p>
 
         <section class="module-section">
-            <h2>Module 2.1: Entry Point Hardening</h2>
-            <p>**Content placeholder:** Focus on doors and frames. Detail how to install high-security deadbolts, reinforce hinges (long screws into studs), and replace standard strike plates with heavy-duty, extended versions.</p>
+            <h2>Module 2.1: Entry Point Hardening: Doors and Frames</h2>
+            <p>Approximately 70% of home invasions occur through the front or back door. This module focuses on turning your door, frame, and hardware into a system designed to resist **kick-in violence** and blunt force attack.</p>
+
+            <div class="key-concept">
+                <strong>The Weakest Link:</strong> The frame, not the door, is the point of failure. The common weak point is the strike plate, secured by tiny 1-inch screws only into the thin wood of the door jamb. Our focus is anchoring this critical point directly to the structural studs behind the frame.
+            </div>
+
+            <h3>Deadbolt and Strike Plate Reinforcement</h3>
+            <p>The standard residential strike plate is designed for function, not security. We must upgrade this layer:</p>
             <ul>
-                <li>Section on securing the hinge side of the door.</li>
-                <li>How to choose the correct material for door reinforcement.</li>
+                <li><strong>High-Security Deadbolts:</strong> Use deadbolts with a 1-inch minimum throw and a free-spinning hardened steel cylinder guard to resist drilling and wrenching. **Always use Grade 1 commercial-rated hardware.**</li>
+                <li><strong>Extended Strike Plates:</strong> Replace the standard plate with a **heavy-gauge, extended strike plate** (at least 12-18 inches long). This plate must be secured by **3-inch or 4-inch screws** that penetrate through the door jamb and deep into the structural framing (the king and jack studs). This physically anchors the locking point to the house structure.</li>
             </ul>
+            
+            <h3>Securing the Hinge Side (The Push Side)</h3>
+            <p>Intruders often target the hinge side on doors that swing outwards, as pins can be removed. On inward-swinging doors, the hinge side still requires reinforcement to resist warping or splitting from a kick-in attack.</p>
+            <ul>
+                <li>**Hinge Reinforcement:** Every hinge must be secured with at least **two 3-inch or 4-inch screws** that penetrate the jamb and anchor into the nearest stud. This prevents the door from flexing and splitting the frame during a violent attack.</li>
+                <li>**Non-Removable Pin Hinges (Outswing Doors):** For doors that swing out (common in high-wind areas), replace standard hinges with non-removable pin hinges or set screws to prevent pin removal.</li>
+            </ul>
+
+            <div class="module-takeaways">
+                <h3>Module Takeaways 2.1</h3>
+                <p><strong>Core Principle:</strong> The single most effective action to prevent a kick-in is installing an **extended strike plate** secured with **3-inch or 4-inch screws** that penetrate the door frame and anchor into the structural studs.</p>
+            </div>
         </section>
 
         <section class="module-section">
             <h2>Module 2.2: Window & Non-Traditional Entry Defense</h2>
-            <p>**Content placeholder:** Cover securing sliding glass doors (with dowels/bars), basement windows, and garage access. Detail methods for reinforcing glass against breakage.</p>
+            <p>Non-traditional entry points—windows, sliding doors, and the garage—are often overlooked and exploited by criminals. This module focuses on low-cost, high-impact reinforcement techniques for these secondary breaches.</p>
+
+            <h3>Securing Sliding Glass Doors and Non-Standard Openings</h3>
+            <p>Sliding doors fail in two ways: the lock is flimsy, or the door is lifted off its track. Both must be countered.</p>
+            <ol>
+                <li>**Vertical Barricade:** Use a cut-to-fit **solid dowel or metal bar** placed in the bottom track to prevent the door from sliding open, regardless of the lock quality.</li>
+                <li>**Track and Lift Denial:** Install screws or rivets at the top of the track, leaving just enough space for the door to slide freely. This prevents the door from being lifted off its track from the outside.</li>
+                <li>**Window Film:** Apply **security window film** (minimum 8-mil thickness) to the interior side of large, vulnerable glass panels (like sliding doors or large picture windows). This film does not prevent the glass from breaking, but it holds the shattered pieces together, forcing the intruder to spend critical minutes tearing through the plastic-like barrier.</li>
+            </ol>
+
+            <h3>Basement and Garage Defense</h3>
+            <p>The door between the garage and the main house is often a standard, low-security interior door. Once the garage is breached, this door is the final barrier.</p>
             <ul>
-                <li>Techniques for securing basement windows and egress points.</li>
-                <li>Strategies for securing the door between the garage and the main house.</li>
+                <li>**Garage-to-Home Door Upgrade:** This door must be treated as an exterior door. It should be a **solid core or metal door** equipped with a Grade 1 deadbolt and secured with the same 3-inch/4-inch strike plate screws detailed in Module 2.1.</li>
+                <li>**Basement Windows:** These are small but accessible. They should be protected by metal security grates or highly durable polycarbonate sheets fitted internally. Ensure the grates or sheets can be quickly removed from the inside in case of fire (egress compliance).</li>
             </ul>
+
+            <div class="module-takeaways">
+                <h3>Module Takeaways 2.2</h3>
+                <p><strong>Core Principle:</strong> The door between the garage and the home should be secured to the **same Grade 1 standard** as any exterior entry point, as the garage offers an intruder valuable time and cover.</p>
+            </div>
         </section>
-        
+
         <section class="module-section">
-            <h2>Module 2.3: Smart Security and Surveillance</h2>
-            <p>**Content placeholder:** Provide best practices for camera placement (covering entry points, not just property lines), optimizing self-monitored alarm systems, and using lighting with security systems.</p>
+            <h2>Module 2.3: Smart Security and Surveillance Optimization</h2>
+            <p>Technical security systems—cameras, alarms, and sensors—are your active, electronic perimeter. Their effectiveness relies entirely on correct placement, reliability, and proper integration with the physical environment.</p>
+
+            <h3>Optimal Camera Placement and Coverage</h3>
+            <p>Your cameras must serve two functions: deterrence and forensic capture. They must cover points of approach and entry while being difficult to disable.</p>
+            <ol>
+                <li>**Height and Angle:** Mount cameras high (**9-12 feet**) and angle them downward. This provides a wide field of view and makes them difficult for a trespasser to reach or obscure. **Avoid pointing cameras directly at bright light sources** (sun, porch lights) which can wash out the image.</li>
+                <li>**Targeted Coverage:** The camera's primary focus should be the **face of the individual** approaching the door or window. Don't waste coverage on broad property lines unless necessary for the perimeter. Ensure overlapping coverage to eliminate dead zones.</li>
+                <li>**Power Redundancy:** Use cameras with battery backup or PoE (Power over Ethernet) to ensure they remain active if the main power is cut during a breach attempt.</li>
+            </ol>
+
+            <h3>Self-Monitored Alarm System Best Practices</h3>
+            <p>A self-monitored system (like Ring, SimpliSafe, etc.) requires a high level of personal vigilance. The most critical element is reducing the time between detection and your response (or the pre-programmed automated response).</p>
             <ul>
-                <li>Checklist for optimal camera placement (angle and height).</li>
-                <li>Guide to setting up a reliable, self-monitored alarm system.</li>
+                <li>**Layered Sensor Placement:** Utilize both door/window sensors and **internal motion sensors**. Place motion sensors in high-traffic areas (halls, stairwells) to confirm an interior breach, reducing false alarms from a door opening briefly.</li>
+                <li>**Panic Integration:** Ensure key access points (like the primary bedroom) have immediate access to a **physical or app-based panic button** that triggers the loudest possible siren and immediately notifies designated contacts/authorities.</li>
+                <li>**Integration with Lighting:** Program the alarm system to **flash all exterior and interior lights** immediately upon triggering. This disorients the intruder, identifies the location to neighbors, and provides light for cameras.</li>
             </ul>
+            
+            <div class="module-takeaways">
+                <h3>Module Takeaways 2.3</h3>
+                <p><strong>Core Principle:</strong> Cameras should be mounted **high (9-12 feet)** and their primary function is to secure forensic evidence by capturing the **face of the individual** approaching the entry point.</p>
+            </div>
         </section>
+
+        <hr>
 
         <div class="quiz-cta">
             <h2>Ready to be Certified?</h2>
-            <p>Complete the course material above, then click below to take the **10-question final assessment**.</p>
+            <p>You have mastered the physical and technical concepts of Fortify Your Fortress. Click below to take the **10-question final assessment** and earn your certification for Pillar 2.</p>
             <a href="quiz_p2.html">Start Pillar 2 Certification Quiz</a>
         </div>
 
