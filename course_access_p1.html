@@ -15,6 +15,8 @@
             --background-light: #f7f7f7;
             --module-bg: #fff;
             --shadow-lift: 0 4px 12px rgba(0,0,0,0.05);
+            --correct-color: #4CAF50; /* Green */
+            --incorrect-color: #F44336; /* Red */
         }
         /* Global and Utility Styles */
         body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--background-light); color: var(--text-medium); line-height: 1.6; }
@@ -33,6 +35,14 @@
         .gated-table th, .gated-table td { border: 1px solid #ddd; padding: 10px; }
         .gated-table th { background-color: #f2f2f2; }
 
+        /* Quiz Check-in Styles */
+        .quiz-checkin { margin-top: 20px; padding: 20px; border-top: 2px dashed var(--primary-color); background-color: var(--secondary-color); border-radius: 0 0 8px 8px; }
+        .quiz-checkin h3 { color: var(--primary-color); margin-top: 0; font-size: 1.2em; }
+        .quiz-checkin label { display: block; margin-bottom: 10px; cursor: pointer; }
+        .feedback { margin-top: 10px; font-weight: bold; }
+        .feedback.correct { color: var(--correct-color); }
+        .feedback.incorrect { color: var(--incorrect-color); }
+        
         /* Call to Action Styling */
         .quiz-cta { text-align: center; padding: 40px; background-color: var(--secondary-color); border: 2px dashed var(--primary-color); border-radius: 8px; }
         .quiz-cta a {
@@ -45,6 +55,32 @@
             transform: translateY(-2px); /* Slight lift on hover */
         }
         .quiz-cta h2 { color: var(--text-dark); }
+
+
+        /* JavaScript Logic for Check-in (for demonstration purposes) */
+        /* NOTE: A real course platform would use server-side validation or more robust client-side logic. */
+        function checkAnswer(moduleId, correctAnswer) {
+            const options = document.getElementsByName(moduleId);
+            let selectedAnswer = null;
+            for (const option of options) {
+                if (option.checked) {
+                    selectedAnswer = option.value;
+                    break;
+                }
+            }
+            const feedbackElement = document.getElementById('feedback-' + moduleId);
+
+            if (selectedAnswer === null) {
+                feedbackElement.innerHTML = 'Please select an answer.';
+                feedbackElement.className = 'feedback';
+            } else if (selectedAnswer === correctAnswer) {
+                feedbackElement.innerHTML = '✅ Correct! You nailed the key concept.';
+                feedbackElement.className = 'feedback correct';
+            } else {
+                feedbackElement.innerHTML = '❌ Incorrect. Review the module\'s key concepts.';
+                feedbackElement.className = 'feedback incorrect';
+            }
+        }
     </style>
 </head>
 <body>
@@ -91,6 +127,15 @@
                 </table>
             </div>
             <p><strong>Key Takeaway:</strong> A gate's primary function is as a <strong>visual deterrent</strong> against the non-committed, opportunistic criminal. It transforms your environment from an "open-access" zone into a <strong>harder target</strong>, but it is only a <strong>pre-perimeter layer</strong>.</p>
+            
+            <div class="quiz-checkin">
+                <h3>Quiz Check-in 1.1</h3>
+                <p><strong>True or False:</strong> A gate is considered an impenetrable primary defense that stops all dedicated intruders from accessing your home.</p>
+                <label><input type="radio" name="quiz1_1" value="True"> True</label>
+                <label><input type="radio" name="quiz1_1" value="False"> False</label>
+                <button onclick="checkAnswer('quiz1_1', 'False')">Check Answer</button>
+                <div id="feedback-quiz1_1" class="feedback"></div>
+            </div>
         </section>
 
         <section class="module-section">
@@ -111,14 +156,23 @@
                 <li><strong>Layered Surveillance:</strong> Systematically cover <strong>all mapped blind spots</strong> with cameras and overlapping motion-sensored lighting. The lights and cameras must be positioned to cover the same zone.</li>
                 <li><strong>The Psychological Tripwire:</strong> When an intruder enters a blind spot, the sudden activation of a light, paired with the knowledge that they are now on camera, creates a psychological shock, often leading to immediate flight.</li>
             </ul>
+
+            <div class="quiz-checkin">
+                <h3>Quiz Check-in 1.2</h3>
+                <p><strong>True or False:</strong> The primary goal of layering cameras and motion lights is to provide the intruder with "elusiveness" and room to operate covertly.</p>
+                <label><input type="radio" name="quiz1_2" value="True"> True</label>
+                <label><input type="radio" name="quiz1_2" value="False"> False</label>
+                <button onclick="checkAnswer('quiz1_2', 'False')">Check Answer</button>
+                <div id="feedback-quiz1_2" class="feedback"></div>
+            </div>
         </section>
         
         <section class="module-section">
             <h2>Module 1.3: Advanced Concealment Denial: Landscape & Architecture</h2>
-            <p>Your property's layout—both exterior and interior—must actively work against the intruder's desire for cover. This module moves beyond aesthetics to utilize architecture and landscaping as an **active, psychological obstacle**.</p>
+            <p>Your property's layout—both exterior and interior—must actively work against the intruder's desire for cover. This module moves beyond aesthetics to utilize architecture and landscaping as an <strong>active, psychological obstacle</strong>.</p>
 
             <h3>Exterior Concealment Denial: The Landscape Factor</h3>
-            <p>Landscaping must be viewed as an obstacle course, not a hiding place. The critical factor is **time**. Any object that provides cover and reduces visibility allows the intruder to spend more time planning the breach.</p>
+            <p>Landscaping must be viewed as an obstacle course, not a hiding place. The critical factor is <strong>time</strong>. Any object that provides cover and reduces visibility allows the intruder to spend more time planning the breach.</p>
 
             <div class="key-concept">
                 <strong>Rule of Thumb:</strong> Any foliage (shrubs, trees, hedges) within 15 feet of the home should be carefully managed. Trees should be limbed high (at least 7 feet) to prevent vertical access to second floors, and all shrubs near the foundation must be trimmed low (less than 3 feet).
@@ -128,7 +182,7 @@
             <p>Structure your property's perimeter into two defensive layers to manage concealment:</p>
             <ul>
                 <li><strong>Layer 1 (The Inner Ring): The "Visibility Layer."</strong> This is the space closest to the home's foundation (0-15 feet). Use low-growing, non-concealing plants (less than 3 feet) to ensure clear, unobstructed sightlines to all first-floor windows and doors. The goal is to make the intruder feel completely exposed.</li>
-                <li><strong>Layer 2 (The Outer Ring): The "Impediment Layer."</strong> This is the space along the perimeter/fence line. Use **Barrier Plants**—dense, thorny, or unpleasant-to-touch foliage (e.g., barberry, holly, or dense juniper) to create a physical obstacle. This forces the intruder to create noise and dedicate significant time to breach the property line.</li>
+                <li><strong>Layer 2 (The Outer Ring): The "Impediment Layer."</strong> This is the space along the perimeter/fence line. Use <strong>Barrier Plants</strong>—dense, thorny, or unpleasant-to-touch foliage (e.g., barberry, holly, or dense juniper) to create a physical obstacle. This forces the intruder to create noise and dedicate significant time to breach the property line.</li>
             </ul>
             
             <h4>Audible Security & Movement Restriction</h4>
@@ -141,10 +195,19 @@
             <h4>The Basement/Storage Concealment Problem</h4>
             <p>Basements, workshops, and large storage areas are often architectural weak points because they are filled with clutter, shelving, and partitions that create pockets of cover. In an emergency, this clutter provides a dangerous advantage to an intruder who has breached the home.</p>
             <ul>
-                <li><strong>Concealment vs. Cover:</strong> Teach yourself the difference. **Cover** (a concrete pillar, a brick wall) stops bullets; **Concealment** (a stack of boxes, a curtain, a wooden shelf) hides a person. Multiple storage structures in basements provide plentiful **concealment**.</li>
-                <li>**The Open-Concept Deterrent:** A wide-open, clean basement that leaves no room for concealment serves as an <strong>architectural deterrent</strong>. It forces any in-home threat to operate in plain view, eliminating their tactical advantage and simplifying your response.</li>
+                <li><strong>Concealment vs. Cover:</strong> Teach yourself the difference. <strong>Cover</strong> (a concrete pillar, a brick wall) stops bullets; <strong>Concealment</strong> (a stack of boxes, a curtain, a wooden shelf) hides a person. Multiple storage structures in basements provide plentiful <strong>concealment</strong>.</li>
+                <li><strong>The Open-Concept Deterrent:</strong> A wide-open, clean basement that leaves no room for concealment serves as an <strong>architectural deterrent</strong>. It forces any in-home threat to operate in plain view, eliminating their tactical advantage and simplifying your response.</li>
                 <li><strong>Actionable Step:</strong> Audit your storage areas. Consolidate clutter, eliminate non-essential partitions, and ensure a clear, 360-degree line of sight from all major entry points (stairs, exterior doors) across the room.</li>
             </ul>
+            
+            <div class="quiz-checkin">
+                <h3>Quiz Check-in 1.3</h3>
+                <p><strong>True or False:</strong> In defensive security terms, "Concealment" is the same as "Cover" and will stop a projectile.</p>
+                <label><input type="radio" name="quiz1_3" value="True"> True</label>
+                <label><input type="radio" name="quiz1_3" value="False"> False</label>
+                <button onclick="checkAnswer('quiz1_3', 'False')">Check Answer</button>
+                <div id="feedback-quiz1_3" class="feedback"></div>
+            </div>
         </section>
 
         <section class="module-section">
@@ -157,6 +220,15 @@
                 <li><strong>Interior Deception:</strong> Use <strong>multiple staggered timers</strong> on varied indoor lights. This simulates complex, irregular, human occupancy patterns that are far more convincing than a single, static timer.</li>
                 <li><strong>Color Temperature:</strong> Opt for brighter, whiter light temperatures (<strong>4000K-5000K</strong>, or "cool white") in exterior security lighting. This spectrum is a greater psychological deterrent than warm, yellow light.</li>
             </ul>
+            
+            <div class="quiz-checkin">
+                <h3>Quiz Check-in 1.4</h3>
+                <p><strong>True or False:</strong> Using a single, predictable timer on one living room lamp is the most effective way to simulate human occupancy and deter profilers.</p>
+                <label><input type="radio" name="quiz1_4" value="True"> True</label>
+                <label><input type="radio" name="quiz1_4" value="False"> False</label>
+                <button onclick="checkAnswer('quiz1_4', 'False')">Check Answer</button>
+                <div id="feedback-quiz1_4" class="feedback"></div>
+            </div>
         </section>
 
         <section class="module-section">
@@ -169,6 +241,15 @@
                 <li><strong>Location Data Suppression:</strong> Disable all geotagging functions on your camera and social media apps. Employ <strong>"Chaff"</strong>—intentionally misleading location tags or check-ins that confuse a remote profiling attempt.</li>
                 <li><strong>The Vacation Blackout Protocol:</strong> A strict period of social media silence that begins <strong>two weeks before</strong> you leave and ends <strong>one week after</strong> you return. Never advertise an empty home in real-time.</li>
             </ul>
+
+            <div class="quiz-checkin">
+                <h3>Quiz Check-in 1.5</h3>
+                <p><strong>True or False:</strong> The "Vacation Blackout Protocol" requires you to post a final check-in photo on your way to the airport to ensure your friends know you've left safely.</p>
+                <label><input type="radio" name="quiz1_5" value="True"> True</label>
+                <label><input type="radio" name="quiz1_5" value="False"> False</label>
+                <button onclick="checkAnswer('quiz1_5', 'False')">Check Answer</button>
+                <div id="feedback-quiz1_5" class="feedback"></div>
+            </div>
         </section>
 
         <section class="module-section">
@@ -196,6 +277,15 @@
                 <li><strong>Concealment and Opaque Bags:</strong> Never place high-value item packaging directly on the curb. <strong>Break down all boxes, place them inside opaque trash bags,</strong> and then inside the trash bin to deny an easy inventory of your assets.</li>
                 <li><strong>Mail Interception:</strong> Utilize a secure, locked residential mailbox or a PO Box/Commercial Mail Receiving Agency to sever the link between your home's physical location and your personal documentation.</li>
             </ul>
+            
+            <div class="quiz-checkin">
+                <h3>Quiz Check-in 1.6</h3>
+                <p><strong>True or False:</strong> Statistically, residential burglaries are most likely to occur late at night on weekends when people are typically sleeping.</p>
+                <label><input type="radio" name="quiz1_6" value="True"> True</label>
+                <label><input type="radio" name="quiz1_6" value="False"> False</label>
+                <button onclick="checkAnswer('quiz1_6', 'False')">Check Answer</button>
+                <div id="feedback-quiz1_6" class="feedback"></div>
+            </div>
         </section>
 
         <hr>
