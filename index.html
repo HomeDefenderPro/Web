@@ -67,22 +67,13 @@
             align-items: center;
         }
         .logo {
-            /* UPDATED: Added Flexbox properties for alignment */
-            display: flex; 
-            align-items: center;
-            
+            /* REVERTED: Back to original styling */
             font-size: 1.8em;
             font-weight: 700;
             color: var(--primary-dark);
             font-family: 'Roboto Slab', serif;
         }
-        /* NEW STYLE: For the secondary logo image */
-        .logo img {
-            height: 30px; /* Adjust size as needed, keep it aligned with text */
-            width: auto;
-            margin-left: 8px; /* Space between the text and the logo */
-            vertical-align: middle;
-        }
+        /* REMOVED: The .logo img style rule */
         nav a {
             margin-left: 30px;
             font-weight: 600;
@@ -451,16 +442,13 @@
 
     <div class="fear-fact-bar">
         <div class="container">
-            ⚠️ <strong>SCARY FACT:</strong> A home burglary occurs in the U.S. every 26 seconds. Is your home prepared?
+            ⚠️ **SCARY FACT:** A home burglary occurs in the U.S. every 26 seconds. Is your home prepared?
         </div>
     </div>
 
     <header>
         <div class="container header-content">
-            <a href="#" class="logo">
-                HOME DEFENDER PRO
-                <img src="houselogo.png" alt="House Logo Icon">
-            </a>
+            <a href="#" class="logo">HOME DEFENDER PRO</a>
             <nav>
                 <a href="#courses">Courses</a>
                 <a href="#about">About</a>
@@ -615,7 +603,7 @@
             // IMPORTANT: Replace this placeholder URL with the actual 'pre-filled form' URL from your Google Form
             const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfzY-PHOq0R7kYp0T6I-TfA/formResponse";
 
-            alert("Thank you for your question! We'll open your Google Form in a new window/tab for submission. Please ensure you have configured the GOOGLE_FORM_URL in the script tag.");
+            alert("Thank you for your question! We'll open your Google Form in a new window/tab for submission for submission. Please ensure you have configured the GOOGLE_FORM_URL in the script tag.");
             window.open(GOOGLE_FORM_URL, '_blank');
         }
     </script>
