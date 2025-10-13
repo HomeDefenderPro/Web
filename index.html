@@ -67,10 +67,21 @@
             align-items: center;
         }
         .logo {
+            /* UPDATED: Added Flexbox properties for alignment */
+            display: flex; 
+            align-items: center;
+            
             font-size: 1.8em;
             font-weight: 700;
             color: var(--primary-dark);
             font-family: 'Roboto Slab', serif;
+        }
+        /* NEW STYLE: For the secondary logo image */
+        .logo img {
+            height: 30px; /* Adjust size as needed, keep it aligned with text */
+            width: auto;
+            margin-left: 8px; /* Space between the text and the logo */
+            vertical-align: middle;
         }
         nav a {
             margin-left: 30px;
@@ -440,13 +451,16 @@
 
     <div class="fear-fact-bar">
         <div class="container">
-            ⚠️ **SCARY FACT:** A home burglary occurs in the U.S. every 26 seconds. Is your home prepared?
+            ⚠️ <strong>SCARY FACT:</strong> A home burglary occurs in the U.S. every 26 seconds. Is your home prepared?
         </div>
     </div>
 
     <header>
         <div class="container header-content">
-            <a href="#" class="logo">HOME DEFENDER PRO</a>
+            <a href="#" class="logo">
+                HOME DEFENDER PRO
+                <img src="houselogo.png" alt="House Logo Icon">
+            </a>
             <nav>
                 <a href="#courses">Courses</a>
                 <a href="#about">About</a>
