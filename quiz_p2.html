@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillar 2 Certification Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define your visual styling using CSS variables */
+        :root {
+            --primary-color: #3f51b5; /* Blue */
+            --secondary-color: #f0f4ff; /* Light Blue */
+            --text-dark: #1e272e;
+            --text-medium: #444;
+            --background-light: #f7f7f7;
+            --module-bg: #fff;
+            --shadow-lift: 0 4px 12px rgba(0,0,0,0.05);
+            --correct-color: #4CAF50; /* Green */
+            --incorrect-color: #F44336; /* Red */
+            --gold-color: #FFD700;
+        }
+        /* Global and Utility Styles */
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--background-light); color: var(--text-medium); line-height: 1.6; }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
+        h1 { font-family: 'Roboto Slab', serif; color: var(--primary-color); text-align: center; border-bottom: 3px solid var(--primary-color); padding-bottom: 15px; }
+        
+        /* Quiz Form and Question Styling */
+        .quiz-form { background-color: var(--module-bg); padding: 30px; border-radius: 8px; box-shadow: var(--shadow-lift); }
+        .question-block { margin-bottom: 25px; padding: 20px; border: 1px solid #e0e0e0; border-radius: 6px; }
+        .question-block p { font-weight: 700; margin-top: 0; color: var(--text-dark); }
+        .question-block label { display: block; margin-bottom: 8px; cursor: pointer; }
+        .question-block input[type="radio"] { margin-right: 8px; }
 
+        /* Submission and Results */
+        .submit-btn {
+            display: block; width: 100%; padding: 15px; background-color: var(--primary-color); 
+            color: white; font-weight: 700; border: none; border-radius: 5px; cursor: pointer;
+            font-size: 1.1em; transition: background-color 0.3s;
+        }
+        .submit-btn:hover { background-color: #303f9f; }
+
+        #results { 
+            margin-top: 30px; padding: 25px; background-color: var(--secondary-color); 
+            border-radius: 8px; text-align: center; border: 2px solid var(--primary-color);
+            display: none; /* Initially hidden */
+        }
+        #score-display { font-size: 2.5em; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+        .passed { color: var(--correct-color); }
+        .failed { color: var(--incorrect-color); }
+
+        .cert-link {
+            font-size: 1.1em;
+            color: var(--correct-color); /* Green */
+            text-decoration: underline;
+            cursor: pointer;
+            display: block;
+            margin-top: 15px;
+        }
+
+        /* Certification Display Styling (for reference) */
+        .certification-sheet {
+            margin-top: 25px;
+            padding: 40px 20px;
+            border: 5px double var(--gold-color);
+            background-color: #ffffff;
+            color: var(--text-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .certification-sheet h2 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .certification-sheet .cert-name {
+            font-size: 2em;
+            color: var(--gold-color);
+            font-weight: 700;
+            margin: 15px 0;
+            border-bottom: 2px solid #e0e0e0;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .certification-sheet .cert-text {
+            font-size: 1.4em;
+            margin: 20px 0;
+        }
+        .certification-sheet .cert-text strong {
+            font-weight: 700;
+        }
+        .certification-sheet .cert-date {
+            font-size: 1em;
+            margin-top: 30px;
+            color: var(--text-medium);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pillar 2: Fortify Your Fortress Certification Quiz</h1>
+        <p>This assessment covers the core principles of **Entry Point Hardening**, **Impact Resistance**, and **Integrated Technical Security**. You must score **8/10 or higher** to pass.</p>
+
+        <form class="quiz-form" id="p2-quiz">
+            
+            <div class="question-block">
+                <p>1. What is the most critical element of door reinforcement, required to anchor the extended strike plate into the home's structural framing?</p>
+                <label><input type="radio" name="q1" value="A"> 1-inch strike plate screws</label>
+                <label><input type="radio" name="q1" value="B"> 4-inch structural screws</label>
+                <label><input type="radio" name="q1" value="C"> 2-inch hinge screws</label>
+                <label><input type="radio" name="q1" value="D"> Non-removable hinge pins</label>
+            </div>
+
+            <div class="question-block">
+                <p>2. To ensure maximum kick-in resistance, what is the recommended minimum length for a heavy-gauge steel security plate?</p>
+                <label><input type="radio" name="q2" value="A"> 6 inches</label>
+                <label><input type="radio" name="q2" value="B"> 12 inches</label>
+                <label><input type="radio" name="q2" value="C"> 18 to 24 inches</label>
+                <label><input type="radio" name="q2" value="D"> 30 inches or more</label>
+            </div>
+
+            <div class="question-block">
+                <p>3. Which material is mandated for all exterior doors to offer acceptable resistance to a forced entry attack?</p>
+                <label><input type="radio" name="q3" value="A"> Light wood with a cosmetic laminate</label>
+                <label><input type="radio" name="q3" value="B"> Hollow-core door</label>
+                <label><input type="radio" name="q3" value="C"> Solid wood core or steel/fiberglass with a solid core foam filling</label>
+                <label><input type="radio" name="q3" value="D"> Standard aluminum frame</label>
+            </div>
+
+            <div class="question-block">
+                <p>4. Applying a **12-mil security window film** is primarily designed to increase the "Breach Window" time from 2 seconds to approximately how long?</p>
+                <label><input type="radio" name="q4" value="A"> 15 seconds</label>
+                <label><input type="radio" name="q4" value="B"> 45-90 seconds</label>
+                <label><input type="radio" name="q4" value="C"> 3-5 minutes</label>
+                <label><input type="radio" name="q4" value="D"> 10 minutes</label>
+            </div>
+
+            <div class="question-block">
+                <p>5. The door separating the garage from the main house must be a **solid core** door and must meet what specific material rating to be compliant?</p>
+                <label><input type="radio" name="q5" value="A"> Standard residential door (no rating needed)</label>
+                <label><input type="radio" name="q5" value="B"> Solid core, fire-rated (minimum 20-minute rating)</label>
+                <label><input type="radio" name="q5" value="C"> Fiberglass only</label>
+                <label><input type="radio" name="q5" value="D"> Basic metal door</label>
+            </div>
+
+            <div class="question-block">
+                <p>6. What non-wooden barricade is mandated for the bottom track of a sliding glass door to prevent rotation and slippage?</p>
+                <label><input type="radio" name="q6" value="A"> Solid wooden dowel</label>
+                <label><input type="radio" name="q6" value="B"> Square-cut metal bar</label>
+                <label><input type="radio" name="q6" value="C"> Thin plastic wedge</label>
+                <label><input type="radio" name="q6" value="D"> Weighted ballast</label>
+            </div>
+
+            <div class="question-block">
+                <p>7. What is the recommended minimum camera mounting height to offer a wide field of view and make the unit difficult for a trespasser to reach or disable?</p>
+                <label><input type="radio" name="q7" value="A"> 5-6 feet</label>
+                <label><input type="radio" name="q7" value="B"> 7-8 feet</label>
+                <label><input type="radio" name="q7" value="C"> 9-12 feet</label>
+                <label><input type="radio" name="q7" value="D"> Above 15 feet</label>
+            </div>
+
+            <div class="question-block">
+                <p>8. Which camera technology is critical for handling high-contrast lighting situations (like a backlit porch) to prevent the intruder's face from being washed out?</p>
+                <label><input type="radio" name="q8" value="A"> Night Vision (NV)</label>
+                <label><input type="radio" name="q8" value="B"> Wide Dynamic Range (WDR) or High Dynamic Range (HDR)</label>
+                <label><input type="radio" name="q8" value="C"> Pan-Tilt-Zoom (PTZ)</label>
+                <label><input type="radio" name="q8" value="D"> 4K Resolution</label>
+            </div>
+
+            <div class="question-block">
+                <p>9. To prevent anti-sabotage failure after an intruder cuts the phone/internet line, a reliable alarm system must utilize which communication technology?</p>
+                <label><input type="radio" name="q9" value="A"> Ethernet Cable Connection</label>
+                <label><input type="radio" name="q9" value="B"> Wi-Fi Only</label>
+                <label><input type="radio" name="q9" value="C"> Satellite Uplink</label>
+                <label><input type="radio" name="q9" value="D"> Dual Path Communication (Cellular/LTE Backup)</label>
+            </div>
+
+            <div class="question-block">
+                <p>10. In addition to standard contact sensors, what type of sensor should be strategically placed on vulnerable windows to detect a silent glass-cutting breach?</p>
+                <label><input type="radio" name="q10" value="A"> Pressure pad sensors</label>
+                <label><input type="radio" name="q10" value="B"> Glass break sensors</label>
+                <label><input type="radio" name="q10" value="C"> Infrared beam sensors</label>
+                <label><input type="radio" name="q10" value="D"> Temperature change sensors</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit and Get Certified</button>
+        </form>
+
+        <div id="results">
+            <h2>Quiz Results</h2>
+            <p id="score-display">Your Score: 0/10</p>
+            <p id="certification-message"></p>
+        </div>
+
+    </div>
+
+    <script>
+        // Function to handle the certification generation (simulated)
+        function getCertification() {
+            const name = prompt("Please enter the name you would like to appear on your certification sheet:");
+            
+            if (name) {
+                const resultsDiv = document.getElementById('results');
+                const currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                
+                // Create the HTML structure for the certification sheet
+                const certHtml = `
+                    <div class="certification-sheet">
+                        <h2>Certificate of Completion</h2>
+                        <div class="cert-text">This certifies that</div>
+                        <div class="cert-name">${name.toUpperCase()}</div>
+                        <div class="cert-text">Congrats! You Completed the Home Defender Pro Pillar 2 Safety Course.</div>
+                        <div class="cert-text">You are now <strong>Home Defender Pro Pillar 2 Certified</strong>.</div>
+                        <div class="cert-date">Date Completed: ${currentDate}</div>
+                    </div>
+                `;
+                
+                // Replace the results content with the certification sheet
+                resultsDiv.innerHTML = certHtml;
+            } else {
+                alert("Certification sheet cannot be generated without a name.");
+            }
+        }
+
+        // Event listener for quiz submission
+        document.getElementById('p2-quiz').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the form from submitting normally
+
+            // Correct answers based on the module content
+            const correctAnswers = {
+                q1: 'B', // 4-inch structural screws
+                q2: 'C', // 18 to 24 inches
+                q3: 'C', // Solid wood core or steel/fiberglass with a solid core foam filling
+                q4: 'B', // 45-90 seconds
+                q5: 'B', // Solid core, fire-rated (minimum 20-minute rating)
+                q6: 'B', // Square-cut metal bar
+                q7: 'C', // 9-12 feet
+                q8: 'B', // WDR (Wide Dynamic Range) or HDR (High Dynamic Range)
+                q9: 'D', // Dual Path Communication (Cellular/LTE Backup)
+                q10: 'B' // Glass break sensors
+            };
+
+            let score = 0;
+            const form = event.target;
+            const totalQuestions = 10;
+            const passingScore = 8; // Required score to pass
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const qName = 'q' + i;
+                const selected = form.elements[qName].value;
+                if (selected === correctAnswers[qName]) {
+                    score++;
+                }
+            }
+
+            // Display results
+            const resultsDiv = document.getElementById('results');
+            const scoreDisplay = document.getElementById('score-display');
+            const message = document.getElementById('certification-message');
+            
+            scoreDisplay.textContent = `Your Score: ${score}/${totalQuestions}`;
+            resultsDiv.style.display = 'block';
+
+            if (score >= passingScore) {
+                message.innerHTML = `
+                    <p class="passed">🎉 <strong>Congratulations! You are Certified!</strong> You have successfully mastered Pillar 2: Fortify Your Fortress.</p>
+                    <span class="cert-link" onclick="getCertification()">Get Certification Sheet</span>
+                `;
+                message.className = '';
+            } else {
+                message.innerHTML = '😞 <strong>Certification Failed.</strong> You must score 8/10 or higher. Please review the modules and try again.';
+                message.className = 'failed';
+            }
+        });
+    </script>
+</body>
+</html>
