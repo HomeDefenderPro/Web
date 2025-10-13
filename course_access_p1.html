@@ -6,54 +6,136 @@
     <title>Pillar 1: Environmental Control Course Access</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { /* ... your CSS variables ... */ }
-        /* Include the full styles from your course pages for consistency */
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f7f7f7; color: #444; }
+        /* Define your visual styling using CSS variables */
+        :root {
+            --primary-color: #3f51b5; /* Blue */
+            --secondary-color: #f0f4ff; /* Light Blue */
+            --text-dark: #1e272e;
+            --text-medium: #444;
+            --background-light: #f7f7f7;
+            --module-bg: #fff;
+            --shadow-lift: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        /* Global and Utility Styles */
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--background-light); color: var(--text-medium); line-height: 1.6; }
         .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
-        h1, h2 { font-family: 'Roboto Slab', serif; color: #1e272e; }
-        .module-section { margin-bottom: 50px; padding: 30px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .module-section h2 { color: #3f51b5; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; }
-        .quiz-cta { text-align: center; padding: 40px; background-color: #f0f4ff; border: 2px dashed #3f51b5; border-radius: 8px; }
-        .quiz-cta a { display: inline-block; padding: 15px 30px; background-color: #3f51b5; color: white; font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.2em; transition: background-color 0.3s; }
-        .quiz-cta a:hover { background-color: #303f9f; }
-        /* Add other necessary styles from your site */
+        h1, h2, h3 { font-family: 'Roboto Slab', serif; color: var(--text-dark); }
+
+        /* Module Styling */
+        .module-section { margin-bottom: 50px; padding: 30px; background-color: var(--module-bg); border-radius: 8px; box-shadow: var(--shadow-lift); }
+        .module-section h2 { color: var(--primary-color); border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; }
+        .module-section p strong { color: var(--text-dark); }
+        .module-section ul { padding-left: 20px; margin-bottom: 15px; }
+        .key-concept { background-color: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        .key-concept strong { color: #ff9800; }
+
+        /* Call to Action Styling */
+        .quiz-cta { text-align: center; padding: 40px; background-color: var(--secondary-color); border: 2px dashed var(--primary-color); border-radius: 8px; }
+        .quiz-cta a {
+            display: inline-block; padding: 15px 30px; background-color: var(--primary-color); color: white;
+            font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .quiz-cta a:hover {
+            background-color: #303f9f;
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+        .quiz-cta h2 { color: var(--text-dark); }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome, Home Defender!</h1>
-        <p>You have successfully unlocked **Pillar 1: Environmental Control**. Start your training below.</p>
+        <p>You have successfully unlocked **Pillar 1: Environmental Control**. This training focuses on preemptive security—making your property the hardest, riskiest, and least appealing target. **This is advanced deterrence.**</p>
 
         <section class="module-section">
-            <h2>Module 1.1: Perimeter Psychology</h2>
-            <p>**Content placeholder:** Insert your text, images, and videos here explaining how to make your property look difficult and unappeppealing to a potential intruder. This covers landscaping, lighting tricks, and visibility denial.</p>
-            <ul>
-                <li>Section on advanced landscaping techniques for security.</li>
-                <li>How to use motion-activated lighting strategically.</li>
-            </ul>
+            <h2>Module 1.1: Pre-Incident & Home Selection Tactics</h2>
+            <p>The most crucial decision is where you live. This module focuses on the **Low-Hanging Fruit Analysis**, teaching you to assess vulnerability based on location, public access, and visible affluence.</p>
+
+            <div class="key-concept">
+                <strong>The Low-Hanging Fruit Analysis:</strong> Your home must be perceived by a potential intruder as requiring too much time and posing too much risk relative to the reward. We aim to fail the criminal's **OODA Loop** before they even approach the front gate.
+            </div>
+
+            <h3>Geographic Vulnerability and Home Selection</h3>
+            <p>A beautiful home with a high-value vehicle parked directly outside is an **Affluence Signal**. When this signal is near a dense population hub or a **Public Transit System**, you become an immediate target. Proximity to public transit provides the criminal with a critical element: **Avenue of Escape (AoE)**. Before purchasing a home, use mapping tools to analyze all AoEs within a 5-block radius. A successful home defense starts with a successful home selection that lacks easy escape vectors.</p>
         </section>
 
         <section class="module-section">
-            <h2>Module 1.2: Digital Footprint Defense</h2>
-            <p>**Content placeholder:** Insert your text and steps on auditing social media, restricting location data, and managing mail/trash to prevent identity theft and pre-incident intelligence gathering.</p>
-            <ul>
-                <li>Step-by-step social media privacy audit guide.</li>
-                <li>Protocols for handling mail and package deliveries safely.</li>
-            </ul>
+            <h2>Module 1.2: Identifying & Eliminating Common Blind Spots</h2>
+            <p>A blind spot is any area where a trespasser can linger unobserved for **60 seconds or more**—this is the window they use to study interior movement or tamper with locks. This module provides a professional methodology for threat mapping.</p>
+
+            <h3>The 360-Degree Sweep Methodology</h3>
+            <p>Your analysis must be methodical. Use a structured, four-corner approach to identify and map all surveillance and approach-based blind spots.</p>
+            <ol>
+                <li>**The Night Walkthrough:** Walk your perimeter after dark with a flashlight. Look specifically for **deep shadows** cast by structures, dense landscaping, or fences.</li>
+                <li>**Vulnerability Mapping:** Create a simple map of your property and mark all spots where a person could hide completely. Focus on areas near main entry points, below windows, and around utility boxes.</li>
+                <li>**Shadow Control:** Place lighting (covered in Module 1.4) specifically to **move shadows away from the structure**, forcing any trespasser to operate in a fully exposed area, denying them concealment.</li>
+            </ol>
+            <p>A proper analysis denies the intruder the critical time they need to execute their plan.</p>
         </section>
         
         <section class="module-section">
-            <h2>Module 1.3: Community Watch and Analysis</h2>
-            <p>**Content placeholder:** Insert your text on coordinating with neighbors and conducting a thorough property analysis to identify your home's weak points (blind spots, shadows, etc.).</p>
+            <h2>Module 1.3: Advanced Landscaping Techniques for Security</h2>
+            <p>Your garden should serve as an obstacle course, not a hiding place. This module moves beyond aesthetics to utilize landscaping as an active, passive security layer.</p>
+
+            <h3>The Defensive Layering Technique (D-L-T)</h3>
+            <p>Structure your property's perimeter into two defensive layers:</p>
             <ul>
-                <li>Creating a neighborhood defense communication plan.</li>
-                <li>Checklist for identifying physical blind spots around the home.</li>
+                <li>**Layer 1 (Near the House):** The "Visibility Layer." Use low-growing plants (less than 2 feet) that cannot conceal a person, ensuring clear sightlines to all first-floor windows.</li>
+                <li>**Layer 2 (The Perimeter/Fence Line):** The "Impediment Layer." Use **Barrier Plants**—dense, thorny, or unpleasant-to-touch foliage (e.g., barberry, holly, or pyracantha) to create a physical obstacle that requires noise and time to breach.</li>
+            </ul>
+            <p><strong>Audible Security:</strong> Strategically place a **2-foot wide path of decorative gravel** beneath vulnerable first-floor windows. The crunching sound is a non-electronic, always-on alarm, providing immediate auditory feedback of an approach.</p>
+        </section>
+
+        <section class="module-section">
+            <h2>Module 1.4: Non-Obvious Lighting Strategies to Deter Intrusion</h2>
+            <p>The goal is to eliminate all **hiding spots**, not just to shine a light. This module details advanced techniques for light placement and timing that confuse and expose intruders.</p>
+
+            <h3>Shadow Elimination and Deception</h3>
+            <ul>
+                <li><strong>'Washing' vs. 'Spotlighting':</strong> Avoid harsh spotlights, which create deep, dense shadows. Use **Wall-Washing** techniques with exterior fixtures to create uniform, shadow-free illumination that removes all hiding places along the home's surface.</li>
+                <li><strong>Interior Deception:</strong> Use **multiple staggered timers** on varied indoor lights (e.g., one floor lamp on at 6:30 PM, a kitchen light on at 7:15 PM, a bedroom light on at 8:00 PM). This simulates complex, irregular, human occupancy patterns that are far more convincing than a single, static timer.</li>
+                <li>**Color Temperature:** Opt for brighter, whiter light temperatures (**4000K-5000K**, or "cool white") in exterior security lighting. This spectrum is a greater psychological deterrent than warm, yellow light.</li>
             </ul>
         </section>
 
+        <section class="module-section">
+            <h2>Module 1.5: Auditing Your Social Media and Digital Footprint</h2>
+            <p>Intruders today use **OSINT (Open-Source Intelligence)** to profile targets. Your goal is **Intelligence Denial**. This module teaches you how to audit your online presence as a professional threat analyst would.</p>
+
+            <h3>The OSINT Denial Protocol</h3>
+            <ul>
+                <li>**Social Media Privacy Audit:** Log out and view your profiles. Scrub all photos of high-value items (interior electronics, safes, car keys) and eliminate all **image metadata** (which can contain precise location data) from shared photos.</li>
+                <li>**Location Data Suppression:** Disable all geotagging functions on your camera and social media apps. For added security, employ **"Chaff"**—intentionally misleading location tags or check-ins that confuse a remote profiling attempt.</li>
+                <li>**The Vacation Blackout Protocol:** A strict period of social media silence that begins **two weeks before** you leave and ends **one week after** you return. Never advertise an empty home in real-time.</li>
+            </ul>
+        </section>
+
+        <section class="module-section">
+            <h2>Module 1.6: Community Defense and Intelligence Control</h2>
+            <p>This module focuses on managing external factors: the neighborhood network and the sensitive information leaving your home (trash/mail).</p>
+
+            <h3>Setting up Neighborhood Watch and Community Defense</h3>
+            <ul>
+                <li>**Secure Tiered Communication:** Establish a secure communication channel (encrypted app) with trusted neighbors and define **Tiers of Response** (e.g., Tier 1: Active Threat; Tier 2: Suspicious Activity).</li>
+                <li>**Mutual Surveillance Agreements:** Formalize an agreement for reciprocal home-watching during the day and during vacations, including a detailed reporting protocol.</li>
+                <li>**Anomaly Identification:** Train yourself and neighbors to look for **"Out-of-Place Elements"** (unfamiliar cars, misplaced objects used as markers) rather than relying on vague "suspicious people."</li>
+            </ul>
+
+            <h3>Mastering Mail and Trash Management Protocols (Intelligence Denial)</h3>
+            <p>Your trash is a goldmine for profilers. Stop giving them free information.</p>
+            <ul>
+                <li>**The Shredding Mandate:** Shred *everything* with your name, address, or account numbers.</li>
+                <li>**Concealment and Opaque Bags:** Never place high-value item packaging (e.g., new TV box) directly on the curb. **Break down all boxes, place them inside opaque trash bags,** and then inside the trash bin to deny an easy inventory of your assets.</li>
+                <li>**Mail Interception:** Utilize a secure, locked residential mailbox or a PO Box/Commercial Mail Receiving Agency to sever the link between your home's physical location and your personal documentation.</li>
+            </ul>
+        </section>
+
+        <hr>
+
         <div class="quiz-cta">
             <h2>Ready to be Certified?</h2>
-            <p>Complete the course material above, then click below to take the **10-question final assessment**.</p>
+            <p>You have mastered the advanced concepts of Environmental Control. Click below to take the **10-question final assessment** and earn your certification for Pillar 1.</p>
             <a href="quiz_p1.html">Start Pillar 1 Certification Quiz</a>
         </div>
 
