@@ -3,56 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pillar 3: Threat Recognition & Awareness Course Access</title>
+    <title>Pillar 3: Tactical Home Defense Course Access</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ADD ALL YOUR SITE STYLES HERE */
-        :root { --primary-dark: #1e272e; --accent-color: #3f51b5; --light-bg: #fff; }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f7f7f7; color: #444; }
+        /* Define your visual styling using CSS variables */
+        :root {
+            --primary-color: #8b0000; /* Deep Red for Alert/Tactical Focus */
+            --secondary-color: #ffeaea; /* Light Red/Pink */
+            --text-dark: #1e272e;
+            --text-medium: #444;
+            --background-light: #f7f7f7;
+            --module-bg: #fff;
+            --shadow-lift: 0 4px 12px rgba(0,0,0,0.05);
+            --takeaway-color: #2e7d32; /* Dark Green for emphasis */
+        }
+        /* Global and Utility Styles */
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--background-light); color: var(--text-medium); line-height: 1.6; }
         .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
-        h1, h2 { font-family: 'Roboto Slab', serif; color: #1e272e; }
-        .module-section { margin-bottom: 50px; padding: 30px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .module-section h2 { color: #3f51b5; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; }
-        .quiz-cta { text-align: center; padding: 40px; background-color: #f0f4ff; border: 2px dashed #3f51b5; border-radius: 8px; }
-        .quiz-cta a { display: inline-block; padding: 15px 30px; background-color: #3f51b5; color: white; font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.2em; transition: background-color 0.3s; }
-        .quiz-cta a:hover { background-color: #303f9f; }
+        h1, h2, h3 { font-family: 'Roboto Slab', serif; color: var(--text-dark); }
+
+        /* Module Styling */
+        .module-section { margin-bottom: 50px; padding: 30px; background-color: var(--module-bg); border-radius: 8px; box-shadow: var(--shadow-lift); }
+        .module-section h2 { color: var(--primary-color); border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; }
+        .module-section p strong { color: var(--text-dark); }
+        .module-section ul { padding-left: 20px; margin-bottom: 15px; }
+        .key-concept { background-color: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        .key-concept strong { color: #ff9800; }
+
+        /* Takeaways Styles */
+        .module-takeaways { margin-top: 25px; padding: 20px; border: 1px solid var(--takeaway-color); background-color: #e8f5e9; border-radius: 4px; }
+        .module-takeaways h3 { color: var(--takeaway-color); margin-top: 0; font-size: 1.3em; border-bottom: 1px solid var(--takeaway-color); padding-bottom: 5px; }
+        .module-takeaways p { margin: 0; font-weight: 600; line-height: 1.4; }
+        
+        /* Call to Action Styling */
+        .quiz-cta { text-align: center; padding: 40px; background-color: var(--secondary-color); border: 2px dashed var(--primary-color); border-radius: 8px; }
+        .quiz-cta a {
+            display: inline-block; padding: 15px 30px; background-color: var(--primary-color); color: white;
+            font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .quiz-cta a:hover {
+            background-color: #6d0000;
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+        .quiz-cta h2 { color: var(--text-dark); }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome, Home Defender!</h1>
-        <p>You have successfully unlocked **Pillar 3: Threat Recognition & Awareness**. Start your training below.</p>
+        <p>You have successfully unlocked <strong>Pillar 3: Tactical Home Defense</strong>. This is the culmination of your training, moving from prevention (Pillar 1) and fortification (Pillar 2) to **Immediate Action Planning** and the decisive use of geometry and tactics to protect your family during a breach. Start your training below.</p>
 
         <section class="module-section">
-            <h2>Module 3.1: The Awareness Color Codes</h2>
-            <p>**Content placeholder:** Detail the three layers of awareness (Tuned-Out/White, Relaxed/Yellow, Focused/Orange) and how to transition between them based on environment. Emphasize Yellow (relaxed awareness) as the default state.</p>
+            <h2>Module 3.1: Immediate Action Plans (IAP) and Decision Matrix</h2>
+            <p>An Immediate Action Plan is a scripted, rehearsed response designed to eliminate decision-making under stress. It is the tactical roadmap for what you do the second the alarm sounds or you hear an intrusion.</p>
+
+            <div class="key-concept">
+                <strong>The OODA Loop Principle:</strong> Your IAP is designed to disrupt the intruder's OODA Loop (Observe, Orient, Decide, Act). By having your response pre-determined, you execute your action while the intruder is still observing and orienting, giving you the critical **time-on-target** advantage.
+            </div>
+
+            <h3>The Decision Matrix: Stay vs. Evacuate</h3>
+            <p>Every IAP begins with a core decision matrix based on location, threat, and time. Your default response is to **Barricade and Call 911** from your safe room, unless a clear evacuation path is available.</p>
             <ul>
-                <li>Identifying the difference between being relaxed and being complacent.</li>
-                <li>Drills for practicing rapid mental transition to the "Orange" alert state.</li>
+                <li><strong>Scenario 1: Noise in an Unoccupied Area:</strong> If the intrusion is detected far from occupied bedrooms (e.g., the garage or basement), the IAP is **Barricade and Deny**. Secure all occupied doors, establish communication with 911, and wait for law enforcement.</li>
+                <li><strong>Scenario 2: Imminent Threat/Hallway Breach:</strong> If the intrusion is detected directly outside a bedroom, the IAP is **Loud Verbal Challenge and Defense**. Use noise and light to draw attention and confirm intent before taking physical defensive action.</li>
+                <li><strong>Scenario 3: Confirmed Fire/Emergency Exit:</strong> If the primary threat is fire or other non-intruder emergency, the IAP prioritizes **Immediate Evacuation** to the rally point. Security plans must be subordinate to life safety plans.</li>
             </ul>
+
+            <h3>The Rally Point and Family Communication</h3>
+            <p>A successful IAP relies on instant family synchronization.</p>
+            <ul>
+                <li><strong>Internal Communication:</strong> Establish a code word (e.g., "Code Red") that immediately signifies an intrusion and cues the family to execute the IAP without question. This is more effective than shouting "Intruder!"</li>
+                <li><strong>External Rally Point (Safe Haven):</strong> Establish a well-lit, non-obvious location **outside the property perimeter** (e.g., a neighbor's house or corner store) where the family must gather after an evacuation. This prevents family members from re-entering the danger zone looking for others.</li>
+                <li>**Communication with Dispatch:** Practice the required information for a 911 call: **Location (address), Nature of the Emergency (intruder), Number of Intruders (if known), Your Location (safe room), and the Description of the Threat.**</li>
+            </ul>
+
+            <div class="module-takeaways">
+                <h3>Module Takeaways 3.1</h3>
+                <p><strong>Core Principle:</strong> The IAP’s first step is to **eliminate decision-making under stress** by defaulting to the **Barricade and Deny** protocol. The second step is to use a **code word** to initiate the IAP without verbal confusion.</p>
+            </div>
         </section>
 
         <section class="module-section">
-            <h2>Module 3.2: Recognizing Pre-Attack Surveillance</h2>
-            <p>**Content placeholder:** Focus on identifying pre-incident indicators (PINs), suspicious loitering, repeated passes, unusual vehicle presence, and the "contact cycle" used by intruders (observation, testing, execution).</p>
+            <h2>Module 3.2: Safe Room Design and Barrier Tactics</h2>
+            <p>The **Safe Room** is the final, hardened defensive position. It must be prepared to delay entry long enough for law enforcement to arrive, turning the room itself into a delaying obstacle.</p>
+
+            <h3>Bedroom Door Fortification (The Barrier)</h3>
+            <p>Unlike exterior doors, interior doors are hollow and weak. They cannot be reinforced with screws into the frame studs.</p>
             <ul>
-                <li>How to non-verbally communicate awareness to potential threats.</li>
-                <li>Techniques for memory and observation (cataloging anomalies).</li>
+                <li><strong>Security Barricade Device:</strong> Employ a purpose-built, internal door barricade system (e.g., a floor jammer, security bar, or door wedge) on the primary safe room door. These devices redirect force from the weak lock/frame to the **tensile strength of the floor** or wall, buying significant time (typically over 60 seconds).</li>
+                <li><strong>Secondary Barriers:</strong> Stage heavy furniture (dressers, bookshelves) inside the safe room to be rapidly pushed against the door. This creates additional noise, visual obstruction, and a time-delay obstacle the intruder must defeat.</li>
+                <li><strong>Hard-Points for Movement:</strong> During training, identify hard-points within the safe room that offer cover (e.g., behind a chimney, concrete wall) and strong angles for observation/defense, minimizing exposure to soft targets (drywall).</li>
             </ul>
+
+            <h3>Tactical Staging and Gear Deployment</h3>
+            <p>Your safe room must contain immediate-access gear to establish and maintain the advantage.</p>
+            <ul>
+                <li><strong>Communications:</strong> A dedicated, charged **cell phone** (separate from the primary) or a landline for 911 contact.</li>
+                <li><strong>Light and Disorientation:</strong> A high-output **tactical flashlight** (minimum 500 lumens) to blind, disorient, and identify the threat in a dark hallway. Light is a force multiplier.</li>
+                <li><strong>Defensive Tool Access:</strong> Any staged defensive tools (firearms, pepper spray, impact tools) must be secured but immediately accessible to the defender only (e.g., biometric safe). **Access time must be under 5 seconds.**</li>
+                <li><strong>Medical Kit:</strong> A small, accessible IFAK (Individual First Aid Kit) staged to address severe bleeding until professional help arrives.</li>
+            </ul>
+
+            <div class="module-takeaways">
+                <h3>Module Takeaways 3.2</h3>
+                <p><strong>Core Principle:</strong> The safe room's primary defense is a **purpose-built security barricade device** which redirects force to the floor. The safe room should contain a **dedicated communication line** and a **tactical flashlight** (minimum 500 lumens) as a primary defensive tool.</p>
+            </div>
         </section>
-        
+
         <section class="module-section">
-            <h2>Module 3.3: Tactical Mindset and Decision Flow</h2>
-            <p>**Content placeholder:** Train the user in the "what-if" thought process (mental rehearsal) to speed up decision-making under stress. Cover basic non-confrontational methods for discouraging unwanted approach.</p>
+            <h2>Module 3.3: Post-Incident Protocol and Maintaining Legal Integrity</h2>
+            <p>The moments immediately following a defensive action are legally and emotionally critical. This protocol ensures you transition safely to the arrival of law enforcement and preserve the integrity of your legal defense.</p>
+
+            <h3>Transitioning to Law Enforcement Arrival (The 'Contact' Phase)</h3>
+            <p>This phase is high-risk. Law enforcement arrives under high stress and cannot distinguish the defender from the threat initially.</p>
+            <ol>
+                <li><strong>Staging the Scene:</strong> If safe, secure your defensive tool and place it out of immediate reach (e.g., on a high shelf or secured on your person, muzzle down). You must be unarmed when making initial contact with police unless instructed otherwise.</li>
+                <li><strong>Identification and Instructions:</strong> Announce your identity loudly and clearly from the safe room when police arrive. Follow all verbal commands instantly and without argument.</li>
+                <li><strong>The 'Brief and Factual' Statement:</strong> When the initial officer asks what happened, limit your statement to a few facts: **"I was in fear for my life, they broke in, the threat is secured, I need medical assistance."** Do not provide a full, detailed narrative or answer complex questions at this time.</li>
+            </ol>
+
+            <h3>The Legal Integrity Protocol</h3>
+            <p>Your actions immediately after the incident are key to establishing **self-defense immunity** in many jurisdictions.</p>
             <ul>
-                <li>Practicing the "Decision-Action" loop under duress.</li>
-                <li>How to safely confirm a potential threat without escalation.</li>
+                <li><strong>Preserve the Scene:</strong> Do not clean, move, or touch anything unnecessarily. The state of the scene is forensic evidence of the threat you faced.</li>
+                <li><strong>Invoke Your Rights:</strong> Politely inform officers: **"I respect your work, but I will not be answering any further questions without my attorney present."** This is your most critical legal defense move. Any statement made under duress or shock can be used against you.</li>
+                <li><strong>Documenting the Threat:</strong> If safe and the immediate threat is contained, use your phone to capture photographic evidence of the breach (e.g., the kicked-in door, shattered window, signs of forced entry) *before* it is disturbed by forensic teams.</li>
             </ul>
+            
+            <div class="module-takeaways">
+                <h3>Module Takeaways 3.3</h3>
+                <p><strong>Core Principle:</strong> Upon law enforcement arrival, you must **secure your defensive tool** and make only a **Brief and Factual Statement**. The most important legal move is to politely **invoke your right to counsel** immediately after the initial safety check.</p>
+            </div>
         </section>
+
+        <hr>
 
         <div class="quiz-cta">
-            <h2>Ready to be Certified?</h2>
-            <p>Complete the course material above, then click below to take the **10-question final assessment**.</p>
+            <h2>Final Challenge: Are You Operationally Ready?</h2>
+            <p>You have mastered the most advanced principles of Tactical Home Defense. Click below to take the **10-question final assessment** and earn your **Home Defender Pro Master Certification**.</p>
             <a href="quiz_p3.html">Start Pillar 3 Certification Quiz</a>
         </div>
 
