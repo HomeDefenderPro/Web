@@ -3,56 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pillar 4: Non-Confrontational Evasion Course Access</title>
+    <title>Pillar 4: Digital Perimeter and Counter-Surveillance Course Access</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ADD ALL YOUR SITE STYLES HERE */
-        :root { --primary-dark: #1e272e; --accent-color: #3f51b5; --light-bg: #fff; }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f7f7f7; color: #444; }
+        /* Define your visual styling using CSS variables */
+        :root {
+            --primary-color: #008080; /* Teal/Cyan for Digital Focus */
+            --secondary-color: #e0ffff; /* Light Cyan */
+            --text-dark: #1e272e;
+            --text-medium: #444;
+            --background-light: #f7f7f7;
+            --module-bg: #fff;
+            --shadow-lift: 0 4px 12px rgba(0,0,0,0.05);
+            --takeaway-color: #2e7d32; /* Dark Green for emphasis */
+        }
+        /* Global and Utility Styles */
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--background-light); color: var(--text-medium); line-height: 1.6; }
         .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
-        h1, h2 { font-family: 'Roboto Slab', serif; color: #1e272e; }
-        .module-section { margin-bottom: 50px; padding: 30px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .module-section h2 { color: #3f51b5; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; }
-        .quiz-cta { text-align: center; padding: 40px; background-color: #f0f4ff; border: 2px dashed #3f51b5; border-radius: 8px; }
-        .quiz-cta a { display: inline-block; padding: 15px 30px; background-color: #3f51b5; color: white; font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.2em; transition: background-color 0.3s; }
-        .quiz-cta a:hover { background-color: #303f9f; }
+        h1, h2, h3 { font-family: 'Roboto Slab', serif; color: var(--text-dark); }
+
+        /* Module Styling */
+        .module-section { margin-bottom: 50px; padding: 30px; background-color: var(--module-bg); border-radius: 8px; box-shadow: var(--shadow-lift); }
+        .module-section h2 { color: var(--primary-color); border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; }
+        .module-section p strong { color: var(--text-dark); }
+        .module-section ul { padding-left: 20px; margin-bottom: 15px; }
+        .key-concept { background-color: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        .key-concept strong { color: #ff9800; }
+
+        /* Takeaways Styles */
+        .module-takeaways { margin-top: 25px; padding: 20px; border: 1px solid var(--takeaway-color); background-color: #e8f5e9; border-radius: 4px; }
+        .module-takeaways h3 { color: var(--takeaway-color); margin-top: 0; font-size: 1.3em; border-bottom: 1px solid var(--takeaway-color); padding-bottom: 5px; }
+        .module-takeaways p { margin: 0; font-weight: 600; line-height: 1.4; }
+        
+        /* Call to Action Styling */
+        .quiz-cta { text-align: center; padding: 40px; background-color: var(--secondary-color); border: 2px dashed var(--primary-color); border-radius: 8px; }
+        .quiz-cta a {
+            display: inline-block; padding: 15px 30px; background-color: var(--primary-color); color: white;
+            font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .quiz-cta a:hover {
+            background-color: #006666;
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+        .quiz-cta h2 { color: var(--text-dark); }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome, Home Defender!</h1>
-        <p>You have successfully unlocked **Pillar 4: Non-Confrontational Evasion**. Start your training below.</p>
+        <p>You have successfully unlocked <strong>Pillar 4: Digital Perimeter and Counter-Surveillance</strong>. In the modern security landscape, your **Digital Footprint** is the most exploited vulnerability. This module teaches you to lock down your personal data, minimize your public profile, and detect active reconnaissance against your property. Start your training below.</p>
 
         <section class="module-section">
-            <h2>Module 4.1: The Evasion Action Plan</h2>
-            <p>**Content placeholder:** Focus on implementing the "Run, Hide, Report" framework tailored for a home invasion. Establishing primary and secondary escape routes and designated external family rally points.</p>
+            <h2>Module 4.1: Digital Footprint Minimization (OPSEC) and Privacy Hardening</h2>
+            <p>Operational Security (OPSEC) involves protecting sensitive personal data that criminals can use to plan an attack, steal your identity, or target your family's routine. This is the **Denial of Information** phase.</p>
+
+            <div class="key-concept">
+                <strong>Data Triangulation:</strong> Criminals exploit three vectors: **Public Records** (property ownership, address), **Social Media** (routines, vacation timing, asset display), and **Breached Databases** (passwords, emails). Minimize data exposure in all three areas to eliminate planning resources.
+            </div>
+
+            <h3>Eliminating Public Records Exposure</h3>
+            <p>Public-facing data often confirms your current residence, travel habits, and financial capacity.</p>
             <ul>
-                <li>Detailed checklist for external and internal rally points.</li>
-                <li>Drills for practicing rapid, silent family communication.</li>
+                <li><strong>Data Broker Opt-Out:</strong> Use dedicated services or manually contact the top 10 **People Search Websites** (data brokers like Whitepages, Spokeo) to remove your name, address, and phone number. This must be an ongoing, quarterly action.</li>
+                <li><strong>Property Ownership Masking:</strong> For advanced security, consult with an attorney to transfer property ownership to a **Trust or LLC** to prevent a simple search from revealing your personal name and address in public land records.</li>
+                <li><strong>Mail Security:</strong> Never leave mail in an unlocked box for extended periods. Consider using a P.O. Box for all non-essential correspondence.</li>
             </ul>
+
+            <h3>Social Media OPSEC Protocol</h3>
+            <p>Social media is the single greatest source of intelligence for criminals planning a non-random attack.</p>
+            <ul>
+                <li><strong>Privacy Lockdown:</strong> Set all primary social media accounts to the **highest privacy settings** ("Friends Only" or equivalent). Disable geotagging/location services for all photo uploads.</li>
+                <li><strong>The 48-Hour Rule:</strong> Never post vacation photos, travel check-ins, or high-value asset photos (cars, unique jewelry, high-end electronics) in real-time. Post these updates with a **minimum 48-hour delay** to obscure the current occupancy status of your home.</li>
+                <li><strong>Children's Privacy:</strong> Never post specific school names, sports schedules, or location-based photos of children. This exposes their routine and potential attack vectors.</li>
+            </ul>
+
+            <div class="module-takeaways">
+                <h3>Module Takeaways 4.1</h3>
+                <p><strong>Core Principle:</strong> Minimize data triangulation by performing **quarterly data broker opt-outs** and strictly observing the **48-Hour Rule** for all social media posts related to home occupancy or travel.</p>
+            </div>
         </section>
 
         <section class="module-section">
-            <h2>Module 4.2: Securing a Safe Room</h2>
-            <p>**Content placeholder:** Provide instructions for establishing and stocking a designated safe room (not necessarily a bunker). Detail methods for quickly barricading a standard interior door using simple household items (e.g., chairs, wedges, belts).</p>
+            <h2>Module 4.2: Network Hardening and Remote Access Security</h2>
+            <p>Your home network is the gateway to your cameras, smart locks, computers, and financial data. A compromised network defeats your technical physical defenses.</p>
+
+            <h3>Router and Network Configuration Hardening</h3>
+            <p>The foundation of digital defense is a secure Wi-Fi network that prevents unauthorized access.</p>
             <ul>
-                <li>The essential contents of a safe room kit (communication, medical, defense).</li>
-                <li>Techniques for using furniture to create temporary barriers and chokepoints.</li>
+                <li><strong>Change Default Credentials:</strong> Immediately change the router's **default admin password and username**. Default credentials are listed publicly and are the easiest entry point for hackers.</li>
+                <li><strong>Disable WPS and UPnP:</strong> Disable Wi-Fi Protected Setup (WPS) and Universal Plug and Play (UPnP) functions on your router. Both protocols are known security liabilities that offer easy remote access to the network.</li>
+                <li><strong>Network Segmentation (The IoT Gap):</strong> Create a **separate, dedicated Guest or IoT (Internet of Things) network** for all smart devices (cameras, thermostats, smart TVs, lights). This ensures that if a vulnerable smart device is hacked, the attacker cannot pivot to your primary network containing sensitive computers and financial data.</li>
             </ul>
+
+            <h3>VPN and Remote Access Protocol</h3>
+            <p>How you access your home network or internet services while traveling must be secured.</p>
+            <ul>
+                <li><strong>Virtual Private Network (VPN) Use:</strong> Use a reputable, paid **VPN service** for all internet activity when connecting via public Wi-Fi (airports, hotels, coffee shops). This encrypts your data and prevents session hijacking.</li>
+                <li><strong>Two-Factor Authentication (2FA) Mandate:</strong> Implement **2FA** on every account that supports it (banking, email, smart home systems, cameras). Use a dedicated authenticator app (e.g., Google Authenticator, Authy) instead of relying on SMS text messages.</li>
+                <li><strong>Secure Firmware/Software:</strong> Keep all router firmware, operating systems, and smart home apps updated. Patches often fix critical security flaws exploited by attackers.</li>
+            </ul>
+
+            <div class="module-takeaways">
+                <h3>Module Takeaways 4.2</h3>
+                <p><strong>Core Principle:</strong> The single most critical network step is **Network Segmentation**—creating a separate IoT network for smart devices. You must also implement **2FA** on all core accounts and **disable WPS/UPnP** on the router.</p>
+            </div>
         </section>
-        
+
         <section class="module-section">
-            <h2>Module 4.3: Silent Movement and Signaling</h2>
-            <p>**Content placeholder:** Train the user in silent movement techniques, using cover and concealment inside the home, and establishing non-verbal (tap/flash) communication signals with family members.</p>
+            <h2>Module 4.3: Counter-Surveillance and Reconnaissance Detection (Physical)</h2>
+            <p>This module teaches you to actively look for signs that a criminal organization is performing **Pre-Operational Surveillance** (reconnaissance) on your home, family, and routines—the critical precursor to a targeted attack.</p>
+
+            <h3>Identifying Surveillance Indicators (The 'Soft' Indicators)</h3>
+            <p>These are subtle signs that a threat actor is gathering intelligence on your routines.</p>
             <ul>
-                <li>Using environmental noise and light to your advantage to stall the intruder.</li>
-                <li>The psychological principle of concealment vs. cover.</li>
+                <li><strong>Pattern Disruption:</strong> Implement regular, small changes to your routine (e.g., leaving 5 minutes earlier, changing driving routes) to make accurate pre-planning difficult. If your modified routine is observed, it’s a high indicator of surveillance.</li>
+                <li><strong>Unknown Vehicles/Personnel:</strong> Keep a mental note of non-local utility vehicles, unmarked vans, or the same unfamiliar vehicle parked multiple times near your home, particularly when family routines occur.</li>
+                <li><strong>Suspicious Maintenance/Solicitation:</strong> Be extremely wary of unsolicited or non-scheduled maintenance, delivery, or charity workers who show excessive interest in the home layout, security systems, or family schedules. **Verify all utility work with a call to the company's main line.**</li>
             </ul>
+
+            <h3>Detection and Documentation Protocol (The 'Hard' Indicators)</h3>
+            <p>These are physical actions taken upon identifying a confirmed surveillance threat.</p>
+            <ol>
+                <li><strong>The "Contact" Confirmation:</strong> If you suspect you are being followed, drive a **pre-planned, high-traffic loop** (e.g., past a police station or public camera). If the subject follows the loop, surveillance is confirmed.</li>
+                <li><strong>Documentation:</strong> Use your phone to safely document the threat—capture license plates, vehicle descriptions, and clear photos of the personnel without engaging them directly. Do this only when you are in a safe, public place.</li>
+                <li><strong>Reporting Protocol:</strong> Report all confirmed or highly suspected reconnaissance to the **local police department's non-emergency line** first, providing all documented information. Inform them of the OPSEC measures you are taking to protect your family.</li>
+            </ol>
+            
+            <div class="module-takeaways">
+                <h3>Module Takeaways 4.3</h3>
+                <p><strong>Core Principle:</strong> The most important countermeasure is **Pattern Disruption** (changing your routine) to force surveillance teams to reveal themselves. **Always verify unsolicited maintenance** and report confirmed surveillance to the police non-emergency line with detailed documentation (license plate/vehicle).</p>
+            </div>
         </section>
+
+        <hr>
 
         <div class="quiz-cta">
-            <h2>Ready to be Certified?</h2>
-            <p>Complete the course material above, then click below to take the **10-question final assessment**.</p>
+            <h2>Final Challenge: Are You a Master Home Defender?</h2>
+            <p>You have mastered the comprehensive, four-pillar system of home defense. Click below to take the **10-question final assessment** and earn your **Home Defender Pro Master Certification**—your final step in the course.</p>
             <a href="quiz_p4.html">Start Pillar 4 Certification Quiz</a>
         </div>
 
