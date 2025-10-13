@@ -580,10 +580,10 @@
                 <h2>Have a Question or Security Scenario?</h2>
                 <p>Our team is here to help you secure your peace of mind. Submit your inquiries, security challenges, or feedback directly to us.</p>
 
-                <form id="contactForm" onsubmit="submitToGoogleForm(event)">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email Address" required>
-                    <textarea name="issue" placeholder="Your Question or Security Issue..." required></textarea>
+                <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfCigiaE08s5C9O-VwQ_03BhuvgAUDUuP6uMUTvcOF4hqbk3w/formResponse" method="POST" target="_self">
+                    <input type="text" name="entry.1234567890" placeholder="Your Name" required>
+                    <input type="email" name="entry.1234567891" placeholder="Your Email Address" required>
+                    <textarea name="entry.1234567892" placeholder="Your Question or Security Issue..." required></textarea>
                     <button type="submit">Submit Question</button>
                 </form>
 
@@ -597,16 +597,5 @@
         </div>
     </footer>
 
-    <script>
-        function submitToGoogleForm(e) {
-            e.preventDefault();
-            // IMPORTANT: Replace this placeholder URL with the actual 'pre-filled form' URL from your Google Form
-            const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfzY-PHOq0R7kYp0T6I-TfA/formResponse";
-
-            alert("Thank you for your question! We'll open your Google Form in a new window/tab for submission for submission. Please ensure you have configured the GOOGLE_FORM_URL in the script tag.");
-            window.open(GOOGLE_FORM_URL, '_blank');
-        }
-    </script>
-
-</body>
+    </body>
 </html>
