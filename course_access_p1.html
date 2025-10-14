@@ -1,251 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pillar 1: Environmental Control Course Access</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Define your visual styling using CSS variables */
-        :root {
-            --primary-color: #3f51b5; /* Blue */
-            --secondary-color: #f0f4ff; /* Light Blue */
-            --text-dark: #1e272e;
-            --text-medium: #444;
-            --background-light: #f7f7f7;
-            --module-bg: #fff;
-            --shadow-lift: 0 4px 12px rgba(0,0,0,0.05);
-            --takeaway-color: #2e7d32; /* Dark Green for emphasis */
-        }
-        /* Global and Utility Styles */
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--background-light); color: var(--text-medium); line-height: 1.6; }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
-        h1, h2, h3 { font-family: 'Roboto Slab', serif; color: var(--text-dark); }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillar 1: Environmental Control Course Access</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define your visual styling using CSS variables */
+        :root {
+            --primary-color: #3f51b5; /* Blue */
+            --secondary-color: #f0f4ff; /* Light Blue */
+            --text-dark: #1e272e;
+            --text-medium: #444;
+            --background-light: #f7f7f7;
+            --module-bg: #fff;
+            --shadow-lift: 0 4px 12px rgba(0,0,0,0.05);
+            --takeaway-color: #2e7d32; /* Dark Green for emphasis */
+        }
+        /* Global and Utility Styles */
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--background-light); color: var(--text-medium); line-height: 1.6; }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 25px; }
+        h1, h2, h3 { font-family: 'Roboto Slab', serif; color: var(--text-dark); }
 
-        /* Module Styling */
-        .module-section { margin-bottom: 50px; padding: 30px; background-color: var(--module-bg); border-radius: 8px; box-shadow: var(--shadow-lift); }
-        .module-section h2 { color: var(--primary-color); border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; }
-        .module-section p strong { color: var(--text-dark); }
-        .module-section ul { padding-left: 20px; margin-bottom: 15px; }
-        .key-concept { background-color: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; margin: 15px 0; border-radius: 4px; }
-        .key-concept strong { color: #ff9800; }
-        .table-container { overflow-x: auto; margin: 20px 0; }
-        .gated-table { width: 100%; border-collapse: collapse; text-align: left; }
-        .gated-table th, .gated-table td { border: 1px solid #ddd; padding: 10px; }
-        .gated-table th { background-color: #f2f2f2; }
-        .module-image { text-align: center; margin: 20px 0; } /* CSS for centering the image */
+        /* Module Styling */
+        .module-section { margin-bottom: 50px; padding: 30px; background-color: var(--module-bg); border-radius: 8px; box-shadow: var(--shadow-lift); }
+        .module-section h2 { color: var(--primary-color); border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; }
+        .module-section p strong { color: var(--text-dark); }
+        .module-section ul { padding-left: 20px; margin-bottom: 15px; }
+        .key-concept { background-color: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        .key-concept strong { color: #ff9800; }
+        .table-container { overflow-x: auto; margin: 20px 0; }
+        .gated-table { width: 100%; border-collapse: collapse; text-align: left; }
+        .gated-table th, .gated-table td { border: 1px solid #ddd; padding: 10px; }
+        .gated-table th { background-color: #f2f2f2; }
 
-        /* Takeaways Styles */
-        .module-takeaways { margin-top: 25px; padding: 20px; border: 1px solid var(--takeaway-color); background-color: #e8f5e9; border-radius: 4px; }
-        .module-takeaways h3 { color: var(--takeaway-color); margin-top: 0; font-size: 1.3em; border-bottom: 1px solid var(--takeaway-color); padding-bottom: 5px; }
-        .module-takeaways p { margin: 0; font-weight: 600; line-height: 1.4; }
-        
-        /* Call to Action Styling */
-        .quiz-cta { text-align: center; padding: 40px; background-color: var(--secondary-color); border: 2px dashed var(--primary-color); border-radius: 8px; }
-        .quiz-cta a {
-            display: inline-block; padding: 15px 30px; background-color: var(--primary-color); color: white;
-            font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.2em;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .quiz-cta a:hover {
-            background-color: #303f9f;
-            transform: translateY(-2px); /* Slight lift on hover */
-        }
-        .quiz-cta h2 { color: var(--text-dark); }
-    </style>
+        /* Takeaways Styles */
+        .module-takeaways { margin-top: 25px; padding: 20px; border: 1px solid var(--takeaway-color); background-color: #e8f5e9; border-radius: 4px; }
+        .module-takeaways h3 { color: var(--takeaway-color); margin-top: 0; font-size: 1.3em; border-bottom: 1px solid var(--takeaway-color); padding-bottom: 5px; }
+        .module-takeaways p { margin: 0; font-weight: 600; line-height: 1.4; }
+        
+        /* Call to Action Styling */
+        .quiz-cta { text-align: center; padding: 40px; background-color: var(--secondary-color); border: 2px dashed var(--primary-color); border-radius: 8px; }
+        .quiz-cta a {
+            display: inline-block; padding: 15px 30px; background-color: var(--primary-color); color: white;
+            font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .quiz-cta a:hover {
+            background-color: #303f9f;
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+        .quiz-cta h2 { color: var(--text-dark); }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome, Home Defender!</h1>
-        <p>You have successfully unlocked <strong>Pillar 1: Environmental Control</strong>. This training focuses on preemptive security—making your property the hardest, riskiest, and least appealing target. This is <strong>advanced deterrence</strong>.</p>
+    <div class="container">
+        <h1>Welcome, Home Defender!</h1>
+        <p>You have successfully unlocked <strong>Pillar 1: Environmental Control</strong>. This training focuses on preemptive security—making your property the hardest, riskiest, and least appealing target. This is <strong>advanced deterrence</strong>.</p>
 
-        <section class="module-section">
-            <h2>Module 1.1: Pre-Incident & Home Selection Tactics</h2>
-            <p>The most crucial decision is where you live. This module focuses on the <strong>Low-Hanging Fruit Analysis</strong>, teaching you to assess vulnerability based on location, public access, and visible affluence.</p>
+        <section class="module-section">
+            <h2>Module 1.1: Pre-Incident & Home Selection Tactics</h2>
+            <p>The most crucial decision is where you live. This module focuses on the <strong>Low-Hanging Fruit Analysis</strong>, teaching you to assess vulnerability based on location, public access, and visible affluence.</p>
 
-            <div class="key-concept">
-                <strong>The Low-Hanging Fruit Analysis:</strong> Your home must be perceived by a potential intruder as requiring too much time and posing too much risk relative to the reward. We aim to fail the criminal's <strong>OODA Loop</strong> before they even approach the front gate.
-            </div>
-
-            <h3>Geographic Vulnerability and Home Selection</h3>
-            <p>A beautiful home with a high-value vehicle parked directly outside is an <strong>Affluence Signal</strong>. When this signal is near a dense population hub or a <strong>Public Transit System</strong>, you become an immediate target. Proximity to public transit provides the criminal with a critical element: <strong>Avenue of Escape (AoE)</strong>. Before purchasing a home, use mapping tools to analyze all AoEs within a 5-block radius. A successful home defense starts with a successful home selection that lacks easy escape vectors. <strong>Avoid being the "low-hanging fruit."</strong></p>
-
-            <h3>Gated vs. Non-Gated Community Analysis</h3>
-            <div class="table-container">
-                <table class="gated-table">
-                    <thead>
-                        <tr>
-                            <th>Community Type</th>
-                            <th>Security Reality</th>
-                            <th>Deterrent Value</th>
-                            <th>Intruder Psychology</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Non-Gated</strong></td>
-                            <td>High exposure, easy access. Security relies entirely on <strong>individual home layers</strong>.</td>
-                            <td>Low inherent deterrence.</td>
-                            <td>Intruder seeks the <strong>easiest target</strong> on the street with the fastest entry/exit.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Gated</strong></td>
-                            <td>Often provides a <strong>false sense of security</strong>. Crime rates can be similar once the perimeter is breached.</td>
-                            <td><strong>High initial visual deterrent</strong> that screens out opportunistic criminals.</td>
-                            <td>Intruder assumes higher reward inside, but the gate forces them to dedicate more time and effort, making it less "low-hanging fruit."</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-			<div class="module-image">
-                <img src="HDPMod1.1Image.png" alt="Visual summary of Low-Hanging Fruit Analysis, comparing non-gated and gated homes with public transit proximity and a graphic of low-hanging fruit vs. hard-to-reach fruit." style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 4px;">
+            <div class="key-concept">
+                <strong>The Low-Hanging Fruit Analysis:</strong> Your home must be perceived by a potential intruder as requiring too much time and posing too much risk relative to the reward. We aim to fail the criminal's <strong>OODA Loop</strong> before they even approach the front gate.
             </div>
-                        <p><strong>Key Takeaway:</strong> A gate's primary function is as a <strong>visual deterrent</strong> against the non-committed, opportunistic criminal. It transforms your environment from an "open-access" zone into a <strong>harder target</strong>, but it is only a <strong>pre-perimeter layer</strong>.</p>
-            
-            <div class="module-takeaways">
-                <h3>Module Takeaways 1.1</h3>
-                <p><strong>Core Principle:</strong> A gate is a useful visual deterrent and pre-perimeter layer, but it is <strong>NOT</strong> an impenetrable primary defense against a dedicated intruder.</p>
-            </div>
-        </section>
 
-        <section class="module-section">
-            <h2>Module 1.2: Identifying & Eliminating Common Blind Spots</h2>
-            <p>A blind spot is any area where a trespasser can linger unobserved for <strong>60 seconds or more</strong>—this is the window they use to study interior movement or tamper with locks. This module provides a professional methodology for threat mapping and the technical controls needed to neutralize these weaknesses.</p>
+            <h3>Geographic Vulnerability and Home Selection</h3>
+            <p>A beautiful home with a high-value vehicle parked directly outside is an <strong>Affluence Signal</strong>. When this signal is near a dense population hub or a <strong>Public Transit System</strong>, you become an immediate target. Proximity to public transit provides the criminal with a critical element: <strong>Avenue of Escape (AoE)</strong>. Before purchasing a home, use mapping tools to analyze all AoEs within a 5-block radius. A successful home defense starts with a successful home selection that lacks easy escape vectors. <strong>Avoid being the "low-hanging fruit."</strong></p>
 
-            <h3>The 360-Degree Sweep Methodology</h3>
-            <p>Your analysis must be methodical. Use a structured, four-corner approach to identify and map all surveillance and approach-based blind spots.</p>
-            <ol>
-                <li><strong>The Night Walkthrough:</strong> Walk your perimeter after dark with a flashlight. Look specifically for <strong>deep shadows</strong> cast by structures, dense landscaping, or fences.</li>
-                <li><strong>Vulnerability Mapping:</strong> Create a simple map of your property and mark all spots where a person could hide completely.</li>
-                <li><strong>Shadow Control:</strong> Place lighting (covered in Module 1.4) specifically to <strong>move shadows away from the structure</strong>.</li>
-            </ol>
+            <h3>Gated vs. Non-Gated Community Analysis</h3>
+            <div class="table-container">
+                <table class="gated-table">
+                    <thead>
+                        <tr>
+                            <th>Community Type</th>
+                            <th>Security Reality</th>
+                            <th>Deterrent Value</th>
+                            <th>Intruder Psychology</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Non-Gated</strong></td>
+                            <td>High exposure, easy access. Security relies entirely on <strong>individual home layers</strong>.</td>
+                            <td>Low inherent deterrence.</td>
+                            <td>Intruder seeks the <strong>easiest target</strong> on the street with the fastest entry/exit.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gated</strong></td>
+                            <td>Often provides a <strong>false sense of security</strong>. Crime rates can be similar once the perimeter is breached.</td>
+                            <td><strong>High initial visual deterrent</strong> that screens out opportunistic criminals.</td>
+                            <td>Intruder assumes higher reward inside, but the gate forces them to dedicate more time and effort, making it less "low-hanging fruit."</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Key Takeaway:</strong> A gate's primary function is as a <strong>visual deterrent</strong> against the non-committed, opportunistic criminal. It transforms your environment from an "open-access" zone into a <strong>harder target</strong>, but it is only a <strong>pre-perimeter layer</strong>.</p>
+            
+            <div class="module-takeaways">
+                <h3>Module Takeaways 1.1</h3>
+                <p><strong>Core Principle:</strong> A gate is a useful visual deterrent and pre-perimeter layer, but it is <strong>NOT</strong> an impenetrable primary defense against a dedicated intruder.</p>
+            </div>
+        </section>
 
-            <h3>Denying Elusiveness: Cameras and Motion Sensors</h3>
-            <p>If a potential intruder successfully bypasses the initial layer of defense (geographical home selection, perimeter landscaping), we are now reliant on the deterrent of <strong>denying them elusiveness (the ability to hide)</strong>. Cameras and motion-activated lights are a relatively <strong>inexpensive safety mechanism</strong> that serves as an active deterrent.</p>
-            <ul>
-                <li><strong>Layered Surveillance:</strong> Systematically cover <strong>all mapped blind spots</strong> with cameras and overlapping motion-sensored lighting. The lights and cameras must be positioned to cover the same zone.</li>
-                <li><strong>The Psychological Tripwire:</strong> When an intruder enters a blind spot, the sudden activation of a light, paired with the knowledge that they are now on camera, creates a psychological shock, often leading to immediate flight.</li>
-            </ul>
+        <section class="module-section">
+            <h2>Module 1.2: Identifying & Eliminating Common Blind Spots</h2>
+            <p>A blind spot is any area where a trespasser can linger unobserved for <strong>60 seconds or more</strong>—this is the window they use to study interior movement or tamper with locks. This module provides a professional methodology for threat mapping and the technical controls needed to neutralize these weaknesses.</p>
 
-            <div class="module-takeaways">
-                <h3>Module Takeaways 1.2</h3>
-                <p><strong>Core Principle:</strong> The goal of layering cameras and motion lights is to **deny** the intruder elusiveness, forcing them to operate fully exposed to surveillance.</p>
-            </div>
-        </section>
-        
-        <section class="module-section">
-            <h2>Module 1.3: Advanced Concealment Denial: Landscape & Architecture</h2>
-            <p>Your property's layout—both exterior and interior—must actively work against the intruder's desire for cover. This module moves beyond aesthetics to utilize architecture and landscaping as an <strong>active, psychological obstacle</strong>.</p>
+            <h3>The 360-Degree Sweep Methodology</h3>
+            <p>Your analysis must be methodical. Use a structured, four-corner approach to identify and map all surveillance and approach-based blind spots.</p>
+            <ol>
+                <li><strong>The Night Walkthrough:</strong> Walk your perimeter after dark with a flashlight. Look specifically for <strong>deep shadows</strong> cast by structures, dense landscaping, or fences.</li>
+                <li><strong>Vulnerability Mapping:</strong> Create a simple map of your property and mark all spots where a person could hide completely.</li>
+                <li><strong>Shadow Control:</strong> Place lighting (covered in Module 1.4) specifically to <strong>move shadows away from the structure</strong>.</li>
+            </ol>
 
-            <h3>Exterior Concealment Denial: The Landscape Factor</h3>
-            <p>Landscaping must be viewed as an obstacle course, not a hiding place. The critical factor is <strong>time</strong>. Any object that provides cover and reduces visibility allows the intruder to spend more time planning the breach.</p>
+            <h3>Denying Elusiveness: Cameras and Motion Sensors</h3>
+            <p>If a potential intruder successfully bypasses the initial layer of defense (geographical home selection, perimeter landscaping), we are now reliant on the deterrent of <strong>denying them elusiveness (the ability to hide)</strong>. Cameras and motion-activated lights are a relatively <strong>inexpensive safety mechanism</strong> that serves as an active deterrent.</p>
+            <ul>
+                <li><strong>Layered Surveillance:</strong> Systematically cover <strong>all mapped blind spots</strong> with cameras and overlapping motion-sensored lighting. The lights and cameras must be positioned to cover the same zone.</li>
+                <li><strong>The Psychological Tripwire:</strong> When an intruder enters a blind spot, the sudden activation of a light, paired with the knowledge that they are now on camera, creates a psychological shock, often leading to immediate flight.</li>
+            </ul>
 
-            <div class="key-concept">
-                <strong>Rule of Thumb:</strong> Any foliage (shrubs, trees, hedges) within 15 feet of the home should be carefully managed. Trees should be limbed high (at least 7 feet) to prevent vertical access to second floors, and all shrubs near the foundation must be trimmed low (less than 3 feet).
-            </div>
+            <div class="module-takeaways">
+                <h3>Module Takeaways 1.2</h3>
+                <p><strong>Core Principle:</strong> The goal of layering cameras and motion lights is to **deny** the intruder elusiveness, forcing them to operate fully exposed to surveillance.</p>
+            </div>
+        </section>
+        
+        <section class="module-section">
+            <h2>Module 1.3: Advanced Concealment Denial: Landscape & Architecture</h2>
+            <p>Your property's layout—both exterior and interior—must actively work against the intruder's desire for cover. This module moves beyond aesthetics to utilize architecture and landscaping as an <strong>active, psychological obstacle</strong>.</p>
 
-            <h4>The Defensive Layering Technique (D-L-T)</h4>
-            <p>Structure your property's perimeter into two defensive layers to manage concealment:</p>
-            <ul>
-                <li><strong>Layer 1 (The Inner Ring): The "Visibility Layer."</strong> This is the space closest to the home's foundation (0-15 feet). Use low-growing, non-concealing plants (less than 3 feet) to ensure clear, unobstructed sightlines to all first-floor windows and doors. The goal is to make the intruder feel completely exposed.</li>
-                <li><strong>Layer 2 (The Outer Ring): The "Impediment Layer."</strong> This is the space along the perimeter/fence line. Use <strong>Barrier Plants</strong>—dense, thorny, or unpleasant-to-touch foliage (e.g., barberry, holly, or dense juniper) to create a physical obstacle. This forces the intruder to create noise and dedicate significant time to breach the property line.</li>
-            </ul>
-            
-            <h4>Audible Security & Movement Restriction</h4>
-            <p><strong>Audible Security:</strong> Strategically place a <strong>2-foot wide path of decorative gravel</strong> beneath vulnerable first-floor windows and along high-traffic approach paths. The crunching sound serves as a non-electronic, always-on alarm, providing immediate auditory feedback of an approach before the intruder is even at the wall.</p>
-            <p><strong>Climbing Denial:</strong> Remove any structural elements near second-story windows that could aid climbing, such as unsecured ladders, latticework, or accessible shed roofs. Consider planting thorny vines (like Climbing Roses) near ground-level windows to deny convenient handholds or resting spots.</p>
+            <h3>Exterior Concealment Denial: The Landscape Factor</h3>
+            <p>Landscaping must be viewed as an obstacle course, not a hiding place. The critical factor is <strong>time</strong>. Any object that provides cover and reduces visibility allows the intruder to spend more time planning the breach.</p>
 
-            <h3>Interior Concealment Denial: Architectural Weak Points</h3>
-            <p>Concealment is not only an external factor; it also dictates the safety of your home's interior, particularly in the event of an in-home threat.</p>
+            <div class="key-concept">
+                <strong>Rule of Thumb:</strong> Any foliage (shrubs, trees, hedges) within 15 feet of the home should be carefully managed. Trees should be limbed high (at least 7 feet) to prevent vertical access to second floors, and all shrubs near the foundation must be trimmed low (less than 3 feet).
+            </div>
 
-            <h4>The Basement/Storage Concealment Problem</h4>
-            <p>Basements, workshops, and large storage areas are often architectural weak points because they are filled with clutter, shelving, and partitions that create pockets of cover. In an emergency, this clutter provides a dangerous advantage to an intruder who has breached the home.</p>
-            <ul>
-                <li><strong>Concealment vs. Cover:</strong> Teach yourself the difference. <strong>Cover</strong> (a concrete pillar, a brick wall) stops bullets; <strong>Concealment</strong> (a stack of boxes, a curtain, a wooden shelf) hides a person. Multiple storage structures in basements provide plentiful <strong>concealment</strong>.</li>
-                <li><strong>The Open-Concept Deterrent:</strong> A wide-open, clean basement that leaves no room for concealment serves as an <strong>architectural deterrent</strong>. It forces any in-home threat to operate in plain view, eliminating their tactical advantage and simplifying your response.</li>
-                <li><strong>Actionable Step:</strong> Audit your storage areas. Consolidate clutter, eliminate non-essential partitions, and ensure a clear, 360-degree line of sight from all major entry points (stairs, exterior doors) across the room.</li>
-            </ul>
-            
-            <div class="module-takeaways">
-                <h3>Module Takeaways 1.3</h3>
-                <p><strong>Core Principle:</strong> In defensive terms, **Concealment** (hiding) is not the same as **Cover** (stopping bullets). Your security strategy must prioritize the denial of concealment, both indoors and out.</p>
-            </div>
-        </section>
+            <h4>The Defensive Layering Technique (D-L-T)</h4>
+            <p>Structure your property's perimeter into two defensive layers to manage concealment:</p>
+            <ul>
+                <li><strong>Layer 1 (The Inner Ring): The "Visibility Layer."</strong> This is the space closest to the home's foundation (0-15 feet). Use low-growing, non-concealing plants (less than 3 feet) to ensure clear, unobstructed sightlines to all first-floor windows and doors. The goal is to make the intruder feel completely exposed.</li>
+                <li><strong>Layer 2 (The Outer Ring): The "Impediment Layer."</strong> This is the space along the perimeter/fence line. Use <strong>Barrier Plants</strong>—dense, thorny, or unpleasant-to-touch foliage (e.g., barberry, holly, or dense juniper) to create a physical obstacle. This forces the intruder to create noise and dedicate significant time to breach the property line.</li>
+            </ul>
+            
+            <h4>Audible Security & Movement Restriction</h4>
+            <p><strong>Audible Security:</strong> Strategically place a <strong>2-foot wide path of decorative gravel</strong> beneath vulnerable first-floor windows and along high-traffic approach paths. The crunching sound serves as a non-electronic, always-on alarm, providing immediate auditory feedback of an approach before the intruder is even at the wall.</p>
+            <p><strong>Climbing Denial:</strong> Remove any structural elements near second-story windows that could aid climbing, such as unsecured ladders, latticework, or accessible shed roofs. Consider planting thorny vines (like Climbing Roses) near ground-level windows to deny convenient handholds or resting spots.</p>
 
-        <section class="module-section">
-            <h2>Module 1.4: Non-Obvious Lighting Strategies to Deter Intrusion</h2>
-            <p>The goal is to eliminate all <strong>hiding spots</strong>, not just to shine a light. This module details advanced techniques for light placement and timing that confuse and expose intruders.</p>
+            <h3>Interior Concealment Denial: Architectural Weak Points</h3>
+            <p>Concealment is not only an external factor; it also dictates the safety of your home's interior, particularly in the event of an in-home threat.</p>
 
-            <h3>Shadow Elimination and Deception</h3>
-            <ul>
-                <li><strong>'Washing' vs. 'Spotlighting':</strong> Avoid harsh spotlights, which create deep, dense shadows. Use <strong>Wall-Washing</strong> techniques with exterior fixtures to create uniform, shadow-free illumination that removes all hiding places along the home's surface.</li>
-                <li><strong>Interior Deception:</strong> Use <strong>multiple staggered timers</strong> on varied indoor lights. This simulates complex, irregular, human occupancy patterns that are far more convincing than a single, static timer.</li>
-                <li><strong>Color Temperature:</strong> Opt for brighter, whiter light temperatures (<strong>4000K-5000K</strong>, or "cool white") in exterior security lighting. This spectrum is a greater psychological deterrent than warm, yellow light.</li>
-            </ul>
-            
-            <div class="module-takeaways">
-                <h3>Module Takeaways 1.4</h3>
-                <p><strong>Core Principle:</strong> Effective occupancy simulation requires <strong>multiple staggered timers</strong> on varied indoor lights to create complex, irregular patterns, not a single, predictable timer.</p>
-            </div>
-        </section>
+            <h4>The Basement/Storage Concealment Problem</h4>
+            <p>Basements, workshops, and large storage areas are often architectural weak points because they are filled with clutter, shelving, and partitions that create pockets of cover. In an emergency, this clutter provides a dangerous advantage to an intruder who has breached the home.</p>
+            <ul>
+                <li><strong>Concealment vs. Cover:</strong> Teach yourself the difference. <strong>Cover</strong> (a concrete pillar, a brick wall) stops bullets; <strong>Concealment</strong> (a stack of boxes, a curtain, a wooden shelf) hides a person. Multiple storage structures in basements provide plentiful <strong>concealment</strong>.</li>
+                <li><strong>The Open-Concept Deterrent:</strong> A wide-open, clean basement that leaves no room for concealment serves as an <strong>architectural deterrent</strong>. It forces any in-home threat to operate in plain view, eliminating their tactical advantage and simplifying your response.</li>
+                <li><strong>Actionable Step:</strong> Audit your storage areas. Consolidate clutter, eliminate non-essential partitions, and ensure a clear, 360-degree line of sight from all major entry points (stairs, exterior doors) across the room.</li>
+            </ul>
+            
+            <div class="module-takeaways">
+                <h3>Module Takeaways 1.3</h3>
+                <p><strong>Core Principle:</strong> In defensive terms, **Concealment** (hiding) is not the same as **Cover** (stopping bullets). Your security strategy must prioritize the denial of concealment, both indoors and out.</p>
+            </div>
+        </section>
 
-        <section class="module-section">
-            <h2>Module 1.5: Auditing Your Social Media and Digital Footprint</h2>
-            <p>Intruders today use <strong>OSINT (Open-Source Intelligence)</strong> to profile targets. Your goal is <strong>Intelligence Denial</strong>. This module teaches you how to audit your online presence as a professional threat analyst would.</p>
+        <section class="module-section">
+            <h2>Module 1.4: Non-Obvious Lighting Strategies to Deter Intrusion</h2>
+            <p>The goal is to eliminate all <strong>hiding spots</strong>, not just to shine a light. This module details advanced techniques for light placement and timing that confuse and expose intruders.</p>
 
-            <h3>The OSINT Denial Protocol</h3>
-            <ul>
-                <li><strong>Social Media Privacy Audit:</strong> Log out and view your profiles. Scrub all photos of high-value items and eliminate all <strong>image metadata</strong> (which can contain precise location data) from shared photos.</li>
-                <li><strong>Location Data Suppression:</strong> Disable all geotagging functions on your camera and social media apps. Employ <strong>"Chaff"</strong>—intentionally misleading location tags or check-ins that confuse a remote profiling attempt.</li>
-                <li><strong>The Vacation Blackout Protocol:</strong> A strict period of social media silence that begins <strong>two weeks before</strong> you leave and ends <strong>one week after</strong> you return. Never advertise an empty home in real-time.</li>
-            </ul>
+            <h3>Shadow Elimination and Deception</h3>
+            <ul>
+                <li><strong>'Washing' vs. 'Spotlighting':</strong> Avoid harsh spotlights, which create deep, dense shadows. Use <strong>Wall-Washing</strong> techniques with exterior fixtures to create uniform, shadow-free illumination that removes all hiding places along the home's surface.</li>
+                <li><strong>Interior Deception:</strong> Use <strong>multiple staggered timers</strong> on varied indoor lights. This simulates complex, irregular, human occupancy patterns that are far more convincing than a single, static timer.</li>
+                <li><strong>Color Temperature:</strong> Opt for brighter, whiter light temperatures (<strong>4000K-5000K</strong>, or "cool white") in exterior security lighting. This spectrum is a greater psychological deterrent than warm, yellow light.</li>
+            </ul>
+            
+            <div class="module-takeaways">
+                <h3>Module Takeaways 1.4</h3>
+                <p><strong>Core Principle:</strong> Effective occupancy simulation requires <strong>multiple staggered timers</strong> on varied indoor lights to create complex, irregular patterns, not a single, predictable timer.</p>
+            </div>
+        </section>
 
-            <div class="module-takeaways">
-                <h3>Module Takeaways 1.5</h3>
-                <p><strong>Core Principle:</strong> The "Vacation Blackout Protocol" is a period of **strict social media silence** that must begin *before* you leave and end *after* you return home to prevent alerting potential intruders.</p>
-            </div>
-        </section>
+        <section class="module-section">
+            <h2>Module 1.5: Auditing Your Social Media and Digital Footprint</h2>
+            <p>Intruders today use <strong>OSINT (Open-Source Intelligence)</strong> to profile targets. Your goal is <strong>Intelligence Denial</strong>. This module teaches you how to audit your online presence as a professional threat analyst would.</p>
 
-        <section class="module-section">
-            <h2>Module 1.6: Community Defense and Intelligence Control</h2>
-            <p>This module focuses on managing external factors: the neighborhood network and the sensitive information leaving your home (trash/mail).</p>
+            <h3>The OSINT Denial Protocol</h3>
+            <ul>
+                <li><strong>Social Media Privacy Audit:</strong> Log out and view your profiles. Scrub all photos of high-value items and eliminate all <strong>image metadata</strong> (which can contain precise location data) from shared photos.</li>
+                <li><strong>Location Data Suppression:</strong> Disable all geotagging functions on your camera and social media apps. Employ <strong>"Chaff"</strong>—intentionally misleading location tags or check-ins that confuse a remote profiling attempt.</li>
+                <li><strong>The Vacation Blackout Protocol:</strong> A strict period of social media silence that begins <strong>two weeks before</strong> you leave and ends <strong>one week after</strong> you return. Never advertise an empty home in real-time.</li>
+            </ul>
 
-            <h3>Setting up Neighborhood Watch and Community Defense</h3>
-            <ul>
-                <li><strong>Secure Tiered Communication:</strong> Establish a secure communication channel (encrypted app) with trusted neighbors and define <strong>Tiers of Response</strong>.</li>
-                <li><strong>Mutual Surveillance Agreements:</strong> Formalize an agreement for reciprocal home-watching during the day and during vacations, including a detailed reporting protocol.</li>
-                <li><strong>Anomaly Identification:</strong> Train yourself and neighbors to look for <strong>"Out-of-Place Elements"</strong> (unfamiliar cars, misplaced objects used as markers).</li>
-            </ul>
+            <div class="module-takeaways">
+                <h3>Module Takeaways 1.5</h3>
+                <p><strong>Core Principle:</strong> The "Vacation Blackout Protocol" is a period of **strict social media silence** that must begin *before* you leave and end *after* you return home to prevent alerting potential intruders.</p>
+            </div>
+        </section>
 
-            <h3>Risk Awareness: Days, Times, and Social Proximity</h3>
-            <p>Vulnerability is not static; it changes based on activity and time. **Be aware of who is around your home**—not just neighbors, but their guests.</p>
-            <ul>
-                <li><strong>High-Risk Days/Times:</strong> Most residential burglaries occur <strong>during the day (10:00 AM - 3:00 PM)</strong> when people are at work. <strong>Weekdays</strong> (Tuesday, Wednesday, and Thursday) present the highest risk.</li>
-                <li><strong>Social Proximity Risk:</strong> Your neighbors may have good intentions, but their <strong>guests</strong> are often exempt from this trust. Large gatherings and parties significantly increase the number of unsupervised eyes on your property. Be <strong>cognizant of leaving valuables on display</strong> when large groups are near your home.</li>
-            </ul>
+        <section class="module-section">
+            <h2>Module 1.6: Community Defense and Intelligence Control</h2>
+            <p>This module focuses on managing external factors: the neighborhood network and the sensitive information leaving your home (trash/mail).</p>
 
-            <h3>Mastering Mail and Trash Management Protocols (Intelligence Denial)</h3>
-            <p>Your trash is a goldmine for profilers. Stop giving them free information.</p>
-            <ul>
-                <li><strong>The Shredding Mandate:</strong> Shred <strong>everything</strong> with your name, address, or account numbers.</li>
-                <li><strong>Concealment and Opaque Bags:</strong> Never place high-value item packaging directly on the curb. <strong>Break down all boxes, place them inside opaque trash bags,</strong> and then inside the trash bin to deny an easy inventory of your assets.</li>
-                <li><strong>Mail Interception:</strong> Utilize a secure, locked residential mailbox or a PO Box/Commercial Mail Receiving Agency to sever the link between your home's physical location and your personal documentation.</li>
-            </ul>
-            
-            <div class="module-takeaways">
-                <h3>Module Takeaways 1.6</h3>
-                <p><strong>Core Principle:</strong> Residential burglaries are statistically most likely to occur **during the day (10 AM - 3 PM) on weekdays** (Tuesday-Thursday), not late at night on weekends.</p>
-            </div>
-        </section>
+            <h3>Setting up Neighborhood Watch and Community Defense</h3>
+            <ul>
+                <li><strong>Secure Tiered Communication:</strong> Establish a secure communication channel (encrypted app) with trusted neighbors and define <strong>Tiers of Response</strong>.</li>
+                <li><strong>Mutual Surveillance Agreements:</strong> Formalize an agreement for reciprocal home-watching during the day and during vacations, including a detailed reporting protocol.</li>
+                <li><strong>Anomaly Identification:</strong> Train yourself and neighbors to look for <strong>"Out-of-Place Elements"</strong> (unfamiliar cars, misplaced objects used as markers).</li>
+            </ul>
 
-        <hr>
+            <h3>Risk Awareness: Days, Times, and Social Proximity</h3>
+            <p>Vulnerability is not static; it changes based on activity and time. **Be aware of who is around your home**—not just neighbors, but their guests.</p>
+            <ul>
+                <li><strong>High-Risk Days/Times:</strong> Most residential burglaries occur <strong>during the day (10:00 AM - 3:00 PM)</strong> when people are at work. <strong>Weekdays</strong> (Tuesday, Wednesday, and Thursday) present the highest risk.</li>
+                <li><strong>Social Proximity Risk:</strong> Your neighbors may have good intentions, but their <strong>guests</strong> are often exempt from this trust. Large gatherings and parties significantly increase the number of unsupervised eyes on your property. Be <strong>cognizant of leaving valuables on display</strong> when large groups are near your home.</li>
+            </ul>
 
-        <div class="quiz-cta">
-            <h2>Ready to be Certified?</h2>
-            <p>You have mastered the advanced concepts of Environmental Control. Click below to take the <strong>10-question final assessment</strong> and earn your certification for Pillar 1.</p>
-            <a href="quiz_p1.html">Start Pillar 1 Certification Quiz</a>
-        </div>
+            <h3>Mastering Mail and Trash Management Protocols (Intelligence Denial)</h3>
+            <p>Your trash is a goldmine for profilers. Stop giving them free information.</p>
+            <ul>
+                <li><strong>The Shredding Mandate:</strong> Shred <strong>everything</strong> with your name, address, or account numbers.</li>
+                <li><strong>Concealment and Opaque Bags:</strong> Never place high-value item packaging directly on the curb. <strong>Break down all boxes, place them inside opaque trash bags,</strong> and then inside the trash bin to deny an easy inventory of your assets.</li>
+                <li><strong>Mail Interception:</strong> Utilize a secure, locked residential mailbox or a PO Box/Commercial Mail Receiving Agency to sever the link between your home's physical location and your personal documentation.</li>
+            </ul>
+            
+            <div class="module-takeaways">
+                <h3>Module Takeaways 1.6</h3>
+                <p><strong>Core Principle:</strong> Residential burglaries are statistically most likely to occur **during the day (10 AM - 3 PM) on weekdays** (Tuesday-Thursday), not late at night on weekends.</p>
+            </div>
+        </section>
 
-    </div>
+        <hr>
+
+        <div class="quiz-cta">
+            <h2>Ready to be Certified?</h2>
+            <p>You have mastered the advanced concepts of Environmental Control. Click below to take the <strong>10-question final assessment</strong> and earn your certification for Pillar 1.</p>
+            <a href="quiz_p1.html">Start Pillar 1 Certification Quiz</a>
+        </div>
+
+    </div>
 </body>
 </html>
